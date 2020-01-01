@@ -7,7 +7,7 @@ This is the course GitHub page for __EC330: Urban & Regional Economic Problems__
 - [Syllabus](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/044c04bcbac3663498707241157cc855d7707b24/Syllabus/syllabus.pdf)
 
 
-#Lectures
+## Lectures
 
 - __Week 1: Intro & Review__:
 
@@ -15,9 +15,69 @@ This is the course GitHub page for __EC330: Urban & Regional Economic Problems__
   
   - Lecture 2: EC201 Review & The 5 Axioms of Urban Economics
   
-- __Week 2: Intro & Review__:
+- __Week 2: Cities & Firm Clustering__:
 
-  - Lecture 1: Introduction to Urban Econ
+  - Lecture 3: City Size
   
-  - Lecture 2: EC201 Review & The 5 Axioms of Urban Economics
+  - Lecture 4: Firm Clustering & Growth
+  
+- __Week 3: Land Rents__:
+
+  - Lecture 5: Urban Rents
+  
+  - Lecture 6: Urban Land Use
+  
+
+- __Week 4: Neighborhood Choice__:
+
+  - Lecture 7: Neighborhood Choice Part I
+  
+  - Lecture 8: Neighborhood Choice Part II
+
+
+
+- __Week 5: Local Labor Markets__:
+
+  - Lecture 9: Local Labor Markets Part I
+  
+  - Lecture 10: Local Labor Markets Part II
+  
+
+- __Week 6: Midterm__:
+
+  - Lecture 11: Midterm Exam
+  
+  - Lecture 12: Introduction to Place Based Policies
+  
+
+- __Week 7: Place Based Policies__:
+
+  - Lecture 13: Minimum Wage
+  
+  - Lecture 14: Housing Policy
+  
+- __Week 8: Automobiles__:
+
+  - Lecture 15: Automobiles Part I
+  
+  - Lecture 16: Automobiles Part II
+  
+- __Week 9: Transit & The Environment__:
+ 
+  - Lecture 17: Urban Transportation
+  
+  - Lecture 18: The Environmental Consequences of Sorting
+  
+- __Week 10: Topics & Review__:
+
+  - Lecture 19: The Geography of Income Inequality
+  
+  - Lecture 20: Final Review
+  
+
+  
+- __Week 11: Final Exam__:
+
+  
+
   
