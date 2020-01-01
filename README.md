@@ -11,7 +11,7 @@ Welcome to the course GitHub page for __EC330: Urban & Regional Economic Problem
 
   - [Mike Urbancic](https://twitter.com/urbancic?lang=en): This course is based off and inspired by his Urban Economics course. 
   
-  - [Ed Rubin](http://edrub.in/): For the slide aesthetic and answering my never - ending `R` questions. 
+  - [Ed Rubin](http://edrub.in/): For the slide aesthetic and for answering my never - ending `R` questions. 
   
 ## Schedule
 
