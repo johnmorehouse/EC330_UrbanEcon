@@ -6,6 +6,12 @@ This is the course GitHub page for __EC330: Urban & Regional Economic Problems__
 - GE (grader): [Shihab Siddiqui](https://economics.uoregon.edu/profile/smshihab/)
 - [Syllabus](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/044c04bcbac3663498707241157cc855d7707b24/Syllabus/syllabus.pdf)
 
+## Schedule:
+
+__Lectures:__ Tuesday & Thursday 4:00-5:20 pm [McKenzie Hall 240A](https://map.uoregon.edu/c721c7d95)
+
+__Office Hours (John)__: Monday 5:00 pm - 6:00 pm Thursday 10:00 am - 11:00 am 
+
 
 ## Lectures
 
