@@ -6,6 +6,13 @@ Welcome to the course GitHub page for __EC330: Urban & Regional Economic Problem
 - GE (grader): [Shihab Siddiqui](https://economics.uoregon.edu/profile/smshihab/)
 - [Syllabus](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/044c04bcbac3663498707241157cc855d7707b24/Syllabus/syllabus.pdf)
 
+
+### Special thanks to
+
+  - Mike Urbancic: This course is based off and inspired by his Urban Economics Course. 
+  
+  - Ed Rubin: For the slide aesthetic 
+  
 ## Schedule
 
 __Lectures:__ Tuesday & Thursday 4:00-5:20 pm [McKenzie Hall 240A](https://map.uoregon.edu/c721c7d95)
