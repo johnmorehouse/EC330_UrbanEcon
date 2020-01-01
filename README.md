@@ -7,11 +7,11 @@ Welcome to the course GitHub page for __EC330: Urban & Regional Economic Problem
 - [Syllabus](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/044c04bcbac3663498707241157cc855d7707b24/Syllabus/syllabus.pdf)
 
 
-### Special thanks to
+### Special Thanks:
 
-  - Mike Urbancic: This course is based off and inspired by his Urban Economics Course. 
+  - [Mike Urbancic](https://twitter.com/urbancic?lang=en): This course is based off and inspired by his Urban Economics Course. 
   
-  - Ed Rubin: For the slide aesthetic 
+  - [Ed Rubin](http://edrub.in/): For the slide aesthetic, and for answering my never-ending `R` questions. 
   
 ## Schedule
 
