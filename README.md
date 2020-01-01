@@ -22,7 +22,7 @@ __Office Hours (John)__: Monday 5:00 pm - 6:00 pm Thursday 10:00 am - 11:00 am
 
 ## Lectures
 
-After each lecture, I will post the slides below. I will post both a `.html` version and `.pdf` version of the slides -- the html requires an internet connection to use. With the pdf slides, you won't be able to view embedded interactive plots, but everything else should still work.
+After each lecture, I will post the slides below. I will post both a `.html` version and `.pdf` version of the slides -- the `.html` requires an internet connection to use. With the `.pdf` slides, you won't be able to view embedded interactive plots, but everything else should still work.
 
 - __Week 1:__ _Intro & Review_
 
