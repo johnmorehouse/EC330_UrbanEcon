@@ -1,12 +1,12 @@
 # Econ 330: Urban Economics
 
-This is the course GitHub page for __EC330: Urban & Regional Economic Problems__ taught at the University of Oregon in the Winter of 2020. 
+Welcome to the course GitHub page for __EC330: Urban & Regional Economic Problems__ taught at the University of Oregon in the Winter of 2020. 
 
 - Instructor: [John Morehouse](https://www.johnmmorehouse.com/)
 - GE (grader): [Shihab Siddiqui](https://economics.uoregon.edu/profile/smshihab/)
 - [Syllabus](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/044c04bcbac3663498707241157cc855d7707b24/Syllabus/syllabus.pdf)
 
-## Schedule:
+## Schedule
 
 __Lectures:__ Tuesday & Thursday 4:00-5:20 pm [McKenzie Hall 240A](https://map.uoregon.edu/c721c7d95)
 
@@ -14,6 +14,8 @@ __Office Hours (John)__: Monday 5:00 pm - 6:00 pm Thursday 10:00 am - 11:00 am
 
 
 ## Lectures
+
+After each lecture, I will post the slides below. I will post both a .html version and .pdf version of the slides -- the html requires an internet connection to use. With the pdf slides, you won't be able to view embedded interactive plots, but everything else should still work.
 
 - __Week 1: Intro & Review__:
 
