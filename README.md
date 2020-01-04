@@ -17,8 +17,7 @@ Welcome to the course GitHub page for __EC330: Urban & Regional Economic Problem
 
 __Lectures:__ Tuesday & Thursday 4:00-5:20 pm [McKenzie Hall 240A](https://map.uoregon.edu/c721c7d95)
 
-__Office Hours (John)__: Monday 5:00 pm - 6:00 pm Thursday 10:00 am - 11:00 am 
-
+__Office Hours (John)__: Monday 5:00 pm - 6:00 pm & Thursday 9:00 am - 9:50 am
 
 ## Lectures
 
