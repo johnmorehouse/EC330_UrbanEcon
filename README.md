@@ -4,7 +4,7 @@ Welcome to the course GitHub page for __EC330: Urban & Regional Economic Problem
 
 - Instructor: [John Morehouse](https://www.johnmmorehouse.com/)
 - GE (grader): [Shihab Siddiqui](https://economics.uoregon.edu/profile/smshihab/)
-- [Syllabus](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/ce20773a1d51f9b86748d2c0dfaa22b5c1d0795f/Syllabus/syllabus.pdf)
+- [Syllabus](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/f292cb44a71a75848f2bd76f6e8b6ae47acfc87a/Syllabus/syllabus_final.pdf)
 
 
 ### Special Thanks:
