@@ -13,7 +13,7 @@ Welcome to the course GitHub page for __EC330: Urban & Regional Economic Problem
   
   - [Ed Rubin](http://edrub.in/): For the slide aesthetic and for answering my never - ending `R` questions. 
   
-  - [Grant McDermoot](https://grantmcdermott.com/): For his class, which continues to be useful in too many ways to list -- and use of occassional code snippet for this class
+  - [Grant McDermoot](https://grantmcdermott.com/): For his class, which continues to be useful in too many ways to list -- and use of occassional code snippet for this class.
   
 ## Schedule
 
