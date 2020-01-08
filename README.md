@@ -27,7 +27,7 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
 
 - __Week 1:__ _Intro & Review_
 
-  - Lecture 1: (Introduction to Urban Economics)[https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/44fab2f606b133e0d9bd29c665ca1e64e67b63fa/Slides/001-intro/lecture_one.html] (.pdf)[https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/44fab2f606b133e0d9bd29c665ca1e64e67b63fa/Slides/001-intro/lecture_one.pdf]
+  - Lecture 1: [Introduction to Urban Economics](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/44fab2f606b133e0d9bd29c665ca1e64e67b63fa/Slides/001-intro/lecture_one.html) [.pdf](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/44fab2f606b133e0d9bd29c665ca1e64e67b63fa/Slides/001-intro/lecture_one.pdf)
   
   - Lecture 2: EC201 Review & The 5 Axioms of Urban Economics
   
