@@ -371,7 +371,7 @@ As mentioned on Canvas, I will usually post .hi.orange[incomplete] lecture notes
 
 # EC201 Review Quiz
 
-There is an __online review quiz__ on canvas due .hi[Monday the 6th @ midnight]. You get one try and have a maximum of 1.5 hours to complete it.
+There is an __online review quiz__ on canvas due .hi[Monday the 13th @ midnight]. You get one try and have a maximum of 1.5 hours to complete it.
 
 ## But why?
 
