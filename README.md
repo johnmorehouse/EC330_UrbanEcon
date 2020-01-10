@@ -28,11 +28,14 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
 - __Week 1:__ _Intro & Review_
 
   - Lecture 1: [Introduction to Urban Economics](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/db4b2dbd43e265b6914c602ee40466d11089db08/Slides/001-intro/lecture_one.html) 
+  
     - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/7a8c47a98871c1b0777d7af3a2cd490cf1fd6c23/Slides/001-intro/lecture_one.pdf)
   
   - Lecture 2: EC201 Review & The 5 Axioms of Urban Economics
   
-- __Week 2:__ _Cities & Firm Clustering_
+- __Week 2:__ [Cities & Firm Clustering](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/da99ea55e3e6b5c0fc1a877e043475f20ff49d6f/Slides/002-review/lecture_two.html)
+  
+  - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/3c065d463b588f674a05a7fde4e1819533de2bc3/Slides/002-review/lecture_two.pdf)
 
   - Lecture 3: City Size
   
