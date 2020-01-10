@@ -33,7 +33,7 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
   
   - Lecture 2: [EC201 Review & The 5 Axioms of Urban Economics](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/da99ea55e3e6b5c0fc1a877e043475f20ff49d6f/Slides/002-review/lecture_two.html)
   
-     - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/3c065d463b588f674a05a7fde4e1819533de2bc3/Slides/002-review/lecture_two.pdf)
+     - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/4c5e3d1789d8d175afe603e891434ed9412faba0/Slides/002-review/lecture_two.pdf)
   
 - __Week 2:__ _Cities & Firm Clustering_ 
   
