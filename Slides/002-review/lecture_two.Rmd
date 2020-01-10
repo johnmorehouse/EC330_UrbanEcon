@@ -232,12 +232,16 @@ The key players in *the* market are:
   - In other words, equilibrium is when Supply = Demand
   
 --
+ 
+--
 
-- .hi.slate[Consumer Surplus]: The .hi[difference] between the price consumers _actually_ pay and their __maximum__ willingness to pay (WTP)
+- .hi.slate[Consumer Surplus]: The .hi[difference] between a consumers  __maximum__ willingness to pay (WTP) and the market price
+
 
 --
 
-- .hi.slate[Producer Surplus]: The .hi.purple[difference] between the price producers _actually_ sell their good for and their __minimum__ willingness to sell
+- .hi.slate[Producer Surplus]: The .hi.purple[difference] between the producers __minimum__ willingness to sell and the market price
+
 
 --
 
@@ -504,7 +508,7 @@ class: inverse, middle
 
 2. .hi.purple[5 Axioms of Urban Economics]
 
----
+
 
 ---
 
@@ -570,6 +574,7 @@ __Axiom 1__: _Prices adjust to acheive .hi[locational equilibrium]_ <sup>.hi[†
 .footnote[
 .hi[†]: We will refine this definition later in the term
 ]
+
 ---
 
 name:axiom_2
@@ -752,7 +757,6 @@ class: inverse, middle
 
 ---
 
----
 
 
 #Planning
@@ -811,7 +815,7 @@ exclude:true
 
 ```{r decktape}
 p_load(pagedown)
-pagedown::chrome_print(here::here("002-review","lecture_two.html"))
+pagedown::chrome_print(here::here("slides","002-review","lecture_two.html"))
 ```
 
 
