@@ -115,8 +115,6 @@ theme_axes <- theme_void() + theme(
 ---
 
 
----
-
 
 name: schedule
 
