@@ -38,8 +38,9 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
 - __Week 2:__ _Cities & Firm Clustering_ 
   
 
-
-  - Lecture 3: City Size
+  - Lecture 3: [Existence of Cities](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/e31de01f3a2d7cba3bd17f51b41f9593f262f8c6/Slides/003-existence/lecture_three.html)
+  
+    - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/e31de01f3a2d7cba3bd17f51b41f9593f262f8c6/Slides/003-existence/lecture_three.pdf)
   
   - Lecture 4: Firm Clustering & Growth
   
