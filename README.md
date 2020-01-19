@@ -42,7 +42,9 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
   
     - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/e31de01f3a2d7cba3bd17f51b41f9593f262f8c6/Slides/003-existence/lecture_three.pdf)
   
-  - Lecture 4: Firm Clustering & Growth
+  - Lecture 4: [Firm Clustering & Growth](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/bb824814208f981f528da3c6708890d5576b8f6b/Slides/004-size/lecture_four.html)
+  
+    - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/bb824814208f981f528da3c6708890d5576b8f6b/Slides/004-size/lecture_four.pdf)
   
 - __Week 3:__ _Land Rents_
 
