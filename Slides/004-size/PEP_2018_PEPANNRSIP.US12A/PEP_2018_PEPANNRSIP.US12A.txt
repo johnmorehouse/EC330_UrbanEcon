@@ -1,0 +1,19 @@
+PEPANNRSIP
+Annual Estimates of the Resident Population for Incorporated Places of 50,000 or More, Ranked by July 1, 2018 Population: April 1, 2010 to July 1, 2018  - United States -- Places of 50,000+ Population
+
+Note: Areas are included in this table if they exceed the stated threshold at any point in the
+time series. The estimates are based on the 2010 Census and reflect changes to the April 1, 2010
+population due to the Count Question Resolution program and geographic program revisions. All
+geographic boundaries for the 2018 population estimates series are as of January 1, 2018. An
+"(X)" in the 2010 Census field indicates a locality that was formed or incorporated after the
+2010 Census. Additional information on these localities can be found in the Geographic Boundary Change Notes (see https://www.census.gov/programs-surveys/geography/technical-documentation/boundary-change-notes.html). For population estimates methodology
+statements, see 
+http://www.census.gov/programs-surveys/popest/technical-documentation/methodology.html.
+
+
+Suggested Citation: 
+Annual Estimates of the Resident Population for Incorporated Places of 50,000 or More, Ranked by July 1, 2018 Population: April 1, 2010 to July 1, 2018 
+Source: U.S. Census Bureau, Population Division 
+Release Date: May 2019
+
+

@@ -1,0 +1,1310 @@
+---
+title: "Econ 330: Urban Economics"
+subtitle: "Lecture 4"
+author: "John Morehouse"
+date: "January 16th, 2020"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    # self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+urlcolor: blue
+
+---
+class: inverse, center, middle
+
+```{R, setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(
+  broom, here, tidyverse,
+  latex2exp, ggplot2, ggthemes, viridis, extrafont, gridExtra,
+  kableExtra,
+  dplyr, magrittr, knitr, parallel, tufte,emo
+)
+# Define pink color
+red_pink <- "#e64173"
+turquoise <- "#20B2AA"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+# Dark slate grey: #314f4f
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)
+opts_chunk$set(dev = "svg")
+options(device = function(file, width, height) {
+  svg(tempfile(), width = width, height = height)
+})
+# A blank theme for ggplot
+theme_empty <- theme_bw() + theme(
+  line = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  axis.text = element_blank(),
+  plot.title = element_blank(),
+  axis.title = element_blank(),
+  plot.margin = structure(c(0, 0, -0.5, -1), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_simple <- theme_bw() + theme(
+  line = element_blank(),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  axis.text.x = element_text(size = 18, family = "STIXGeneral"),
+  axis.text.y = element_blank(),
+  axis.ticks = element_blank(),
+  plot.title = element_blank(),
+  axis.title = element_blank(),
+  # plot.margin = structure(c(0, 0, -1, -1), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes_math <- theme_void() + theme(
+  text = element_text(family = "MathJax_Math"),
+  axis.title = element_text(size = 22),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = "grey70",
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes_serif <- theme_void() + theme(
+  text = element_text(family = "MathJax_Main"),
+  axis.title = element_text(size = 22),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = "grey70",
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes <- theme_void() + theme(
+  text = element_text(family = "Fira Sans Book"),
+  axis.title = element_text(size = 18),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = grey_light,
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+```
+
+
+
+# Lecture IV: City Size and Growth
+
+---
+
+
+
+
+name: schedule
+
+# Schedule
+
+## Today
+
+--
+
+1) .hi.purple[Clustering Continued]
+
+2) .hi.purple[City Size]
+
+3) .hi.purple[Intro to Growth]
+
+
+--
+
+--
+
+## Upcoming
+
+
+  - .hi.slate[Reading] (Chapter II & III _ToTC_)
+  
+  - .hi.slate[HW 1] (due on Jan 23rd)
+
+--
+
+---
+
+# Last Time
+
+We discussed some .hi[fundamentals] that lead to the existence of cities
+
+--
+
+- .hi.slate[Main takeaway]: 
+
+  - Need some reason (.hi[CRS] in .pink[production] or .pink[exchange]) for cost of cities (high land prices, for example) to be justified
+  
+  
+--
+
+--
+
+.hi.slate[Questions]:
+
+  - Why do cities grow beyond .pink[one factory]?
+ 
+--
+ 
+  - Why are there .purple[differences in size] across cities?
+ 
+  - .pink[Where] do cities emerge?
+ 
+--
+ 
+--
+
+---
+
+
+
+name: zero_profit
+# Recall
+
+How many firms are in the cluster?
+
+```{R, cluster_graph, echo = F, fig.height = 5, fig.width = 8, dev = "svg"}
+profit = function(x) -x^3+5*x^2
+
+  #create cluster plot
+ggplot(data.frame(x=c(0, 6)), aes(x)) + 
+  stat_function(fun=profit, col = "purple")+
+  geom_vline(xintercept =0, size = 0.5)+
+  geom_hline(yintercept =0, size = 0.5)+
+  ggthemes::theme_pander()+
+  xlim(0,6)+
+  ylim(-20,20)+
+  labs(x = "Number of Firms\nIn Cluster", y = "Profit Per Firm")
+
+
+```
+
+
+---
+
+name: cluster
+# Clustering
+
+Why does .hi[profit increase] as firms .pink[cluster]? Firms cluster because
+
+--
+
+1) To share intermediate inputs
+
+2) Labor Matching 
+
+3) Knowledge Sharing
+
+4) Share the pool of labor 
+
+--
+
+Let's look at these in some more detail 
+
+---
+
+# 1: Sharing Inputs
+
+Firms in .hi.orange[similar industries] share inputs to take advantage of scale economies<sup>.hi[†]</sup>
+
+.footnote[
+.hi[†] Scale economies: _bigger_ $\rightarrow$ _cheaper per unit_
+]
+
+--
+
+.hi.slate[Example]: High Tech Firms
+
+--
+
+  - Rapidly changing products that require sophisticated intermediate inputs
+
+  - Electronic components and testing facilities
+--
+
+  - Firms share intermediate input suppliers
+
+--
+
+---
+
+# 1: Sharing Inputs Graph
+
+```{R, cluster_graph_2, echo = F, fig.height = 5, fig.width = 8, dev = "svg"}
+
+cost_input <- function(x) 5/x+2
+ggplot(data.frame(x=c(0, 1)), aes(x)) + 
+  stat_function(fun=cost_input, col = "purple")+
+  geom_vline(xintercept =0, size = 0.5)+
+  geom_hline(yintercept =0, size = 0.5)+
+  ggthemes::theme_pander()+
+  xlim(0,8)+
+  ylim(0,8)+
+  labs(x = "Number of Firms\nIn Cluster", y = "Cost per unit of Input")
+
+
+```
+
+
+---
+
+
+
+
+
+# 2: Labor Matching
+
+Back to our .hi[tech firms] example:
+
+--
+
+- Clustering attracts more of the kind of workers they want
+
+--
+
+- Firms and workers are .pink[not always perfectly matched]
+
+- Mitchmatches .purple[require training] to eliminate skill gap. .hi[Training is costly]
+
+--
+
+- Better for firm if they can find a worker to fill role immediately. More likely in a cluster
+
+
+--
+
+
+---
+
+
+# 3: Knowledge Sharing
+
+__Defn__: .hi[Agglomeration Economies]:  benefits that come when firms and people locate near one another together in cities and industrial clusters
+
+--
+
+> Agglomeration economies are the benefits that come when firms and people locate near one another together in cities and industrial clusters. These benefits all ultimately come from transport costs savings: the only real difference between a nearby firm and one across the continent is that it is easier to connect with a neighbor. Of course, transportation costs must be interpreted broadly, and they include the difficulties in exchanging goods, people, and ideas
+
+Source: [Ed. Glaeser](https://www.nber.org/chapters/c7977.pdf)
+
+--
+
+---
+
+
+name: urban
+# Firm Clustering
+
+Let's refine our language a bit. 
+
+1. _.hi[Localization economies]_
+
+  - Explains .hi.purple[within the same] industry clustering
+  
+2. _.hi.orange[Urbanization economies]_
+
+  - Explains .hi.purple[across] industry clustering
+  
+---
+
+
+# Localization Economies
+
+A _.hi[localization economy]_ occurs when an increase in the size of an industry leads to an increase in productivity of production
+
+## Why?
+
+--
+
+- Evidence of higher .hi[labor productivity]
+
+  - Higher output $\rightarrow$ more productive workers (Henderson, 1986)
+  
+  - Tech workers benefit more from .pink[knowledge spillovers] than manufacturing (Mun & Huchinson, 1995)
+
+--
+
+
+- Evidence of higher .hi.purple[rates of entry]
+
+  - More firms are born where .pink[output is higher]; that is, where  the industry is .purple[clustered] (Carlton, 1986)
+  
+  - Why? 
+
+---
+
+
+# Urbanization Economies
+
+_.hi.orange[Urbanization Economies]_ are when the size of a city leads to an increase in productivity
+
+## Why?
+
+--
+
+  - .hi[Sharing intermediate goods]: (banks, accountants, hotels, transport services)
+  
+--
+
+  - .hi.orange[Pooling]: workers move from industries with low demand to high demand (.orange[across] sector)
+  
+  - .hi.purple[Matching]: common skills across sectors (excel, for example)
+
+--
+
+--
+
+Urbanization Economies result in .hi.orange[large, diverse cities]
+
+
+---
+
+
+
+# Examples
+
+Two major examples of .hi[localization] & .hi.orange[urbanization] economies:
+
+1) .hi.slate[Silicon Valley]
+
+--
+
+- .hi[Localization]: firms locate close to each other to share .pink[high-skilled labor pool] despite very high rents
+
+--
+
+
+2) .hi.slate[Los Angeles]
+
+--
+
+- .hi.orange[Urbanization]: Not really any super dominant industries, yet it continues to grow
+
+--
+
+---
+
+
+
+class: inverse, middle
+# Checklist
+
+.col-left[
+1) .hi[Clustering] `r emo::ji("check")`
+
+  - Reasons for firm clustering
+  
+  - Urbanization vs Localization Economies
+  
+
+2) .hi.purple[City Size]
+]
+
+.col-right[
+
+3) .hi.purple[Intro to Growth]
+
+]
+
+---
+
+
+# City Size
+
+```{R, zipf_one, echo = F, fig.height = 5, fig.width = 8, dev = "svg"}
+#population data
+zipf_data<- read_csv(here::here("004-growth","PEP_2018_PEPANNRSIP.US12A","PEP_2018_PEPANNRSIP.US12A_with_ann.csv")) %>% 
+  janitor::clean_names() %>% 
+  mutate(gc_rank_rank_label = as.numeric(gc_rank_rank_label),
+         respop72018 = as.numeric(respop72018), 
+         respop72017 = as.numeric(respop72017),
+         log_c = 17.34119,
+         zipf_pop = log_c - log(gc_rank_rank_label)) 
+
+
+#graph
+ggplot(zipf_data)+
+  geom_point(aes(x = gc_rank_rank_label,
+                 y = respop72018), col = "purple")+
+  theme_classic()+
+  labs(x = "Rank", y = "Popluation", title = "City Size in the US")+
+  scale_y_continuous(labels=scales::comma)
+
+```
+---
+
+
+# What Function?
+
+```{R, zipf_two, echo = F, fig.height = 5, fig.width = 8, dev = "svg"}
+inverse<- function(x) 1/x
+                     
+ggplot(data.frame(x=c(0, 1000)), aes(x)) + 
+  stat_function(fun=inverse, col = "purple")+
+  geom_vline(xintercept =0, size = 0.5)+
+  geom_hline(yintercept =0, size = 0.5)+
+  ylim(0,.05)+
+  ggthemes::theme_pander()+
+  geom_text(x=250, y=.01, label=latex2exp::TeX("function: $f(x) = \\frac{1}{x}$"))+
+  labs(x = "x",y = "\nf(x)\n")
+  
+  
+  
+```
+
+---
+
+
+# What Function?
+
+```{R, zipf_three, echo = F, fig.height = 5, fig.width = 8, dev = "svg"}
+inverse_2<- function(x) 1000000/x
+
+ggplot(data.frame(x=c(0, 1000)), aes(x)) + 
+  stat_function(fun=inverse_2, col = "purple")+
+  geom_vline(xintercept =0, size = 0.5)+
+  geom_hline(yintercept =0, size = 0.5)+
+  ylim(0,80000)+
+  ggthemes::theme_pander()+
+  geom_text(x=250, y=10000, label=latex2exp::TeX("function: $f(x) = \\frac{1000000}{x}$"))+
+  labs(x = "x",y = "\nf(x)\n")
+
+
+  
+```
+
+---
+
+
+
+name: zipf
+# Size: Zipf's Law
+
+Zipf's Law of city size can be expressed as:
+
+\begin{align*}
+rank = \frac{C}{N}
+\end{align*}
+
+- C represents a constant for a country/region
+
+- N represents the population level
+
+
+
+---
+
+# Zipf's Law: Example
+
+Assume the _third largest_ city in a region has 200,000 people.
+
+- Use Zipf's law to figure out how many people are in the _fifth-largest_ city
+
+
+__2 Steps__
+
+--
+
+1) Calculate the constant C:
+
+\begin{align*}
+3 &= \frac{C}{200,000}\\
+c &=  600,000
+\end{align*}
+
+--
+
+2) Use that info to calculate the population of the 5th largest city:
+
+\begin{align*}
+5 &= \frac{600,000}{Pop_5}
+\end{align*}
+
+---
+
+
+
+# Zipf's Law: Example
+
+Assume the _third largest_ city in a region has 200,000 people.
+
+- Use Zipf's law to figure out how many people are in the _fifth-largest_ city
+
+
+__2 Steps__
+
+
+1) Calculate the constant C:
+
+\begin{align*}
+3 &= \frac{C}{200,000}\\
+c &= 600,000
+\end{align*}
+
+
+
+2) Use that info to calculate the population of the 5th largest city:
+
+\begin{align*}
+5 &= \frac{600,000}{Pop_5} \implies Pop_5 = 120,000
+\end{align*}
+
+---
+
+
+# Zipf's Law: Intuition
+
+.qa[Q1]: In words, what does .hi.orange[zipf's law] tell us about the relationship between .hi[rank] and .hi[city size]?
+
+--
+
+.qa[A1]: In words, this equation says:
+
+  - .pink[A few] cities will be pretty big
+
+--
+
+  - There is a .hi.purple[big drop] in population as rank increases
+  
+  - Most low rank (high number) cities are .hi[pretty similar] in size
+
+--
+
+--
+
+---
+
+
+
+# Primate Cities
+
+.hi.slate[Definition]: A .hi[primate city] is
+
+
+> A major city that works as the .hi.purple[financial, political, and population center of a country] and is not rivaled in any of these aspects by any other city in that country. Normally, a primate city must be at least .purple[twice as populous as the second largest city] in the country.
+
+
+.hi[Examples]:
+
+
+.smnallest[
+.col-left[
+__City__
+
+Seoul, South Korea
+
+Santiago, Chile 
+
+Buenos Aires, Argentina
+
+Lima, Peru
+
+]
+]
+.smallest[
+.col-right[
+__Percent of Total Population__
+
+45.8%
+
+35.5%
+
+33.7%
+
+31.7%
+
+]
+]
+
+
+---
+
+# Why Primate Cities?
+
+What might generate primate cities?
+
+- Large .hi[economies of scale] in exchange
+
+- Inadequate .pink[transportation infastructure] elsewhere
+
+--
+
+- .hi.purple[Political factors]?
+
+--
+
+  - Easier for dictators to bribe, surveil populations of a primary city (?)
+  
+  -  Capital cities with dictatorships are _45%_ larger than capital cities of other countries
+    
+   - Is this relationship .hi.orange[causal]? <sup>.pink[†]</sup>
+
+--
+
+
+.footnote[
+.pink[†] I don't know. Maybe somebody does. But you definitely can't say from the 45% number. Much of modern econ is about figuring out when relationships _are_ causal. For a completely unrelated, but informative and entertaining example, see [this video](https://www.youtube.com/watch?v=6YrIDhaUQOE&t=133s). 
+]
+
+--
+
+---
+
+
+
+# Why Zipf's Law?
+
+.qa[Q2]: _Why does Zipf's Law_ do pretty well in general at describing city size?
+
+
+--
+
+.qa[A2]: __Axiom 2__: _.hi[Self-reinforcing effects] generate extreme outcomes_
+
+  - "Winner take all" situations from policies, agglomeration, knowledge spillovers, etc.
+
+--
+
+
+  - Wages grow, workers in, firms enter, $\rightarrow$ labor demand $\uparrow$ $\rightarrow$ wages grow . `r emo::ji("repeat")`
+  
+--
+
+.qa[Q3]: What slows this process down? .hi.purple[Discuss]
+
+
+--
+
+<center>
+<font size="15"> Increases in Cost </font>
+</center>
+
+--
+
+---
+
+
+# Size
+
+Why do costs increase as workers move in?
+
+1) .hi[Commute costs increase]
+
+  - More people $\implies$ more congestion (all else equal)
+  
+--
+
+2) .hi.green[Pollution] increases
+
+  - More .pink[workers] $\implies$ more .purple[production] $\implies$ more .green[pollution]?
+
+--
+
+3) .hi.orange[Disease]
+
+--
+  - Early 1900's (US), living in a city $\rightarrow$ life expectancy $\downarrow$ 5 years
+  
+  - Now, the US's largest cities life expectancy exceeds the national average
+
+--
+
+  - In many developing countries, life expectancy in cities is lower than rural areas (why?)
+
+
+---
+
+name: utility
+# Utility
+
+
+What can we use to model the value individuals place on different attributes of cities? __Utility__
+
+--
+
+.hi.slate[Utility] is an abstract notion of peoples preferences. A few assumptions
+
+--
+
+
+1. .purple[Higher] levels of utility are .pink[preferred] to .purple[lower] levels. And more consumption is better than less
+
+2. Utility is _ordinal, not cardinal_ meaning only the .hi.pink[rank] of the number matters, .hi.purple[not the level]
+
+--
+
+3. Marginal utility is diminishing (marginal value is diminishing)
+
+
+--
+
+---
+
+
+# Modeling City Size
+
+
+```{R, u_f1, echo = F, dev = "svg"}
+u_f <- function(x) -x^3+1000*x^2+100*x
+ggplot(data.frame(x=c(-10, 900)), aes(x)) + 
+  stat_function(fun=u_f, col = "purple") +
+  labs(x = "Workers (hundreds of thousands)", y = "Individual utility", title = "Individual Utility and City Size") +
+  theme_minimal()+
+  geom_vline(xintercept =0, size = 0.5)+
+  geom_hline(yintercept =0, size = 0.5)+
+  geom_segment(x=775, xend = 775, y= 0, yend = u_f(775), linetype =  "dashed")+
+  geom_segment(x= 0, xend = 775, y= u_f(775), yend = u_f(775), linetype =  "dashed")+
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        plot.title = element_text(hjust = 0.5))+
+  geom_text(x=0, y=u_f(775), label="u'", hjust= 2)+
+  geom_text(x=775, y=0, label="775", vjust= 2)
+
+```
+
+---
+
+
+
+
+# Modeling City Size
+
+
+```{R, u_f2, echo = F, dev = "svg"}
+u_f <- function(x) -x^3+1000*x^2+100*x
+ggplot(data.frame(x=c(-10, 900)), aes(x)) + 
+  stat_function(fun=u_f, col = "purple") +
+  labs(x = "Workers (hundreds of thousands)", y = "Individual utility", title = "Individual Utility and City Size") +
+  theme_minimal()+
+  geom_vline(xintercept =0, size = 0.5)+
+  geom_hline(yintercept =0, size = 0.5)+
+  geom_segment(x=775, xend = 775, y= 0, yend = u_f(775), linetype =  "dashed")+
+  geom_segment(x= 0, xend = 775, y= u_f(775), yend = u_f(775), linetype =  "dashed")+
+  geom_segment(x=375, xend = 375, y= 0, yend = u_f(375), linetype =  "dashed")+
+  geom_segment(x=0, xend = 375, y= u_f(375), yend = u_f(375), linetype =  "dashed")+
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        plot.title = element_text(hjust = 0.5))+
+  geom_text(x=0, y=u_f(375), label="u''", hjust= 2)+
+  geom_text(x=375, y=0, label="375", vjust= 2)+
+  geom_text(x=0, y=u_f(775), label="u'", hjust= 2)+
+  geom_text(x=775, y=0, label="775", vjust= 2)
+```
+
+---
+
+
+
+
+# Modeling City Size
+
+
+```{R, u_f3, echo = F, dev = "svg"}
+u_f <- function(x) -x^3+1000*x^2+100*x
+ggplot(data.frame(x=c(-10, 900)), aes(x)) + 
+  stat_function(fun=u_f, col = "purple") +
+  labs(x = "Workers (hundreds of thousands)", y = "Individual utility", title = "Individual Utility and City Size") +
+  theme_minimal()+
+  geom_vline(xintercept =0, size = 0.5)+
+  geom_hline(yintercept =0, size = 0.5)+
+  geom_segment(x=775, xend = 775, y= 0, yend = u_f(775), linetype =  "dashed")+
+  geom_segment(x= 0, xend = 775, y= u_f(775), yend = u_f(775), linetype =  "dashed")+
+  geom_segment(x= 1000/3 + (10*(9997)^(.5))/3, xend =1000/3 + (10*(9997)^(.5))/3, y= 0, yend = u_f(1000/3 + (10*(9997)^.5)/3), linetype =  "dashed")+
+  geom_segment(x= 0, xend =1000/3 + (10*(9997)^(.5))/3, y= u_f(1000/3 + (10*(9997)^.5)/3), yend = u_f(1000/3 + (10*(9997)^.5)/3), linetype =  "dashed")+
+  geom_segment(x=375, xend = 375, y= 0, yend = u_f(375), linetype =  "dashed")+
+  geom_segment(x=0, xend = 375, y= u_f(375), yend = u_f(375), linetype =  "dashed")+
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        plot.title = element_text(hjust = 0.5))+
+  geom_text(x=0, y=u_f(375), label="u''", hjust= 2)+
+  geom_text(x=375, y=0, label="375", vjust= 2)+
+  geom_text(x=0, y=u_f(775), label="u'", hjust= 2)+
+  geom_text(x=775, y=0, label="775", vjust= 2)+
+  geom_text(x=0, y=u_f(1000/3 + (10*(9997)^.5)/3), label="u*", hjust= 2)+
+  geom_text(x=1000/3 + (10*(9997)^.5)/3, y= 0,label="667", vjust= 2)
+  
+```
+
+---
+
+
+
+
+
+name: eq
+# Locational Equilibrium
+
+.hi.slate[Locational Equilibrium] occurs when utility levels (valuations) across cities are the same for all workers
+
+
+--
+
+  - In practice, we usually do this by .pink[worker type] (demographic, income level, education, etc)
+  
+  - For now, we will just consider the case when .purple[all workers are equivalent] (_but not cities_)
+
+--
+
+  - This assumption is mostly for accounting purposes
+
+--
+
+--
+
+---
+
+# Locational Eq Graph
+
+```{R, u_loc, echo = F, dev = "svg"}
+
+
+u_f <- function(x) -x^3+1000*x^2+100*x+5000000
+u_f2 <- function(x) -x^3+890*x^2+200*x+7000000+.0002*x^4
+u_f3 <- function(x) -x^3+900*x^2+400*x+20000000+.0002*x^4
+
+  ggplot(data.frame(x=c(-10, 1000)), aes(x)) + 
+  stat_function(fun=u_f, col = "purple") +
+  stat_function(fun=u_f2, col = "turquoise") +
+  stat_function(fun=u_f3, col = red_pink) +
+  labs(x = "Workers (hundreds of thousands)", y = "Individual utility", title = "Three Cities") +
+  theme_minimal()+
+  geom_vline(xintercept =0, size = 0.5)+
+  geom_hline(yintercept =0, size = 0.5)+
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        plot.title = element_text(hjust = 0.5))+
+  geom_segment(x= 800, xend = 800, y= 0, yend = u_f(800), linetype =  "dashed")+
+  geom_segment(x= 886, xend = 886, y= 0, yend = u_f(800), linetype =  "dashed")+
+  geom_segment(x= 965, xend = 965, y= 0, yend = u_f(800), linetype =  "dashed")+
+  geom_segment(x= 0, xend = 965, y= u_f(800), yend = u_f(800), linetype =  "dashed")+
+  geom_text(x=0, y = u_f(800), label="u*", hjust= 2)+
+  geom_text(x = 800, y = u_f(800), label = "s", hjust=-1, vjust = -1 )+
+  geom_text(x = 886, y = u_f(800), label = "m", hjust=-1, vjust = -1 )+
+  geom_text(x = 965, y = u_f(800), label = "b", hjust=-1, vjust = -1 )
+
+
+```
+
+
+---
+
+# The Implication?
+
+Back to the .hi.orange[real world]: _why is this framework useful?_
+
+  - Put differently, if utility really does look something like the above curve, what does this mean for policy?
+  
+--
+
+_Policies that impact the .hi.purple[spatial distribution] of the population can have far flung effects on indviduals it was not designed to impact, .hi[via migration]_
+
+
+- .hi.slate[Example]:
+
+--
+
+  - Local school quality improvements $\rightarrow$ increased prices. Higher utility from school quality, lower from higher prices. Some people maybe displaced? (Gentrification)
+  
+--
+
+  - Net effect could be positive, but there will be winners and loosers
+    
+--
+
+--
+
+--
+
+ More on this later in the term (.pink[place-based] policies). 
+
+---
+
+
+class: inverse, middle
+# Checklist
+
+.col-left[
+1) .hi[Clustering] `r emo::ji("check")`
+
+  - Reasons for firm clustering
+  
+  - Urbanization vs Localization Economies
+  
+
+
+2) .hi[City Size] `r emo::ji("check")`
+
+
+  - Zipf's Law
+  
+  - Utility & City Size
+  
+  - Locational Eq
+
+]
+
+
+.col-right[
+
+3) .hi.purple[Intro to Growth]
+
+]
+
+---
+
+name:growth_factors
+# Growth
+
+.hi[Econ in General]: Economic Growth is defined as an increase in per-capita income. 
+
+.hi.purple[Urban Economics]: .hi.slate[Economic Growth] is an increase in the _utility level_ of a typical resident
+
+--
+
+  - Urban definition accounts for factors other than wage
+  
+
+--
+
+1) Increases in natural resources (.pink[gold is found under a city])
+
+--
+
+2) Increases in physical capital (.pink[computers] `r emo::ji("computer")`)
+
+--
+
+--
+
+3) Increases in human capital (.pink[education] `r emo::ji("mortar_board")`)
+
+--
+
+--
+
+4) Technological progress (.pink[computers invented])
+
+--
+
+--
+
+5) Agglomeration Economies `r emo::ji("cityscape")`
+
+--
+
+
+
+---
+
+name:example
+# Example: Innovation
+.col-left[
+```{R, u_innov, echo = F, dev = "svg"}
+u_f <- function(x) -x^3+1000*x^2+100*x+50000000
+u_f4 <- function(x) -x^3+1040*x^2+1130*x+90000000
+
+ggplot(data.frame(x=c(-10, 1000)), aes(x)) + 
+    stat_function(fun=u_f, col = "purple") +
+    labs(x = "Workers (hundreds of thousands)", y = "Individual utility", title = "Individual Utility and City Size") +
+    theme_minimal()+
+    geom_vline(xintercept =0, size = 0.5)+
+    geom_hline(yintercept =0, size = 0.5)+
+    theme(axis.text.y=element_blank(),
+          axis.ticks.y=element_blank(),
+          plot.title = element_text(hjust = 0.5))+
+  geom_segment(x = 800, xend=800,y=0, yend = u_f(800), linetype = "dashed")+
+  geom_segment(x=0,xend = 800, y=u_f(800), yend = u_f(800), linetype = "dashed")+
+  geom_text(x = 800, y= 0, label = "800", vjust= 2)+
+  geom_text(x=0, y= u_f(800), label = "u'", hjust = 2)
+
+```
+]
+
+.col-right[
+
+- __Initially__: 2 cities, both with same utility curve
+
+- Population each city: .pink[800k] (total pop, 1.6 m)
+
+
+]
+---
+
+
+# Example: Innovation
+
+.col-left[
+```{R, u_innov2, echo = F, dev = "svg"}
+u_f <- function(x) -x^3+1000*x^2+100*x+50000000
+u_f4 <- function(x) -x^3+1040*x^2+1130*x+90000000
+
+
+ggplot(data.frame(x=c(-10, 1000)), aes(x)) + 
+    stat_function(fun=u_f, col = "purple") +
+  stat_function(fun=u_f4, col = red_pink) +
+    labs(x = "Workers (hundreds of thousands)", y = "Individual utility", title = "Individual Utility and City Size") +
+    theme_minimal()+
+    geom_vline(xintercept =0, size = 0.5)+
+    geom_hline(yintercept =0, size = 0.5)+
+    theme(axis.text.y=element_blank(),
+          axis.ticks.y=element_blank(),
+          plot.title = element_text(hjust = 0.5))+
+  geom_segment(x = 800, xend=800,y=0, yend = u_f(800), linetype = "dashed")+
+  geom_segment(x=0,xend = 800, y=u_f(800), yend = u_f(800), linetype = "dashed")+
+  geom_text(x = 800, y= 0, label = "800", vjust= 2)+
+  geom_text(x=0, y= u_f(800), label = "u'", hjust = 2)+
+  geom_segment(x = 800, xend=800,y=0, yend = u_f4(800), linetype = "dashed")+
+  geom_segment(x = 0, xend=800,y=u_f4(800), yend = u_f4(800), linetype = "dashed")+
+  geom_text(x=0, y= u_f4(800), label = "u''", hjust = 2)
+  
+```
+]
+
+
+.col-right[
+
+- Producitivty shock brings one cities curve up (due to say, higher wages)
+
+- In the absence of migration, utility is now higher in the higher productivity city
+
+]
+---
+
+
+
+
+
+# Example: Innovation
+
+.col-left[
+```{R, u_innov3, echo = F, dev = "svg"}
+  u_f <- function(x) -x^3+1000*x^2+100*x+50000000
+  u_f4 <- function(x) -x^3+1000*x^2+100*x+90000000
+
+ggplot(data.frame(x=c(-10, 1000)), aes(x)) + 
+    stat_function(fun=u_f, col = "purple") +
+  stat_function(fun=u_f4, col = red_pink) +
+    labs(x = "Workers (hundreds of thousands)", y = "Individual utility", title = "Individual Utility and City Size") +
+    theme_minimal()+
+    geom_vline(xintercept =0, size = 0.5)+
+    geom_hline(yintercept =0, size = 0.5)+
+    theme(axis.text.y=element_blank(),
+          axis.ticks.y=element_blank(),
+          plot.title = element_text(hjust = 0.5))+
+  geom_segment(x = 800, xend=800,y=0, yend = u_f(800), linetype = "dashed", alpha  = .3)+
+  geom_segment(x=0,xend = 800, y=u_f(800), yend = u_f(800), linetype = "dashed", alpha = .3)+
+  geom_text(x = 800, y= 0, label = "800", vjust= 2)+
+  geom_text(x=0, y= u_f(800), label = "u'", hjust = 2)+
+  geom_segment(x = 800, xend=800,y=0, yend = u_f4(800), linetype = "dashed", alpha = .3)+
+  geom_segment(x = 0, xend=800,y=u_f4(800), yend = u_f4(800), linetype = "dashed", alpha = .3)+
+  geom_text(x=0, y= u_f4(800), label = "u''", hjust = 2)+
+  geom_segment(x  = 0, xend = 738.22, y = u_f(738.22), yend = u_f(738.22), linetype = "dashed")+
+  geom_segment(x  = 0, xend = 861.8, y = u_f4(861.8), yend = u_f4(861.8), linetype = "dashed")+
+  geom_segment(x = 738.22, xend = 738.22, y= 0, yend = u_f(738.22), linetype = "dashed")+
+  geom_segment(x = 861.8, xend = 861.8, y= 0, yend = u_f4(861.8), linetype = "dashed")+
+  geom_text(x = 0, y = u_f(738.22), label = "u*", hjust =1.5)+
+  geom_text(x  = 738.22, y = 0, label = "738", vjust = 2)+
+  geom_text(x = 861.8, y = 0, label =  "862", vjust = 2)
+
+
+```
+
+]
+.col-right[
+- Migration induces workers toward the more productive city and away from the less productive city
+
+- .hi.orange[New locational eq] (u^*): utility is equalized (higher than before). populations change 
+]
+
+
+--
+
+- .hi.slate[Note]: We rested on
+
+ - the implicit assumption that .pink[people are perfectly mobile] (and they are the same)
+
+    - High skilled workers are generally far more mobile than low skilled (for variety of reasons). Thoughts?
+
+--
+
+---
+
+
+
+
+# Example Recap
+
+<div style="text-align: left"> Consider two cities: each with an equilibrium population of 800k and the same utility per worker curve</div>
+
+- .hi[Innovation] (tech progress) in one city .pink[shifts utility per worker] curve up
+
+--
+
+- Workers in the innovative city enjoy a .purple[higher level of utility]
+
+- Workers migrate to the innovative city from the city that failed to innovate
+
+--
+
+- Eventually, a .pink[new equilibrium] is reached where .hi[utility per worker] is the .hi[same across both cities]
+  
+  - Innovative city is larger
+
+--
+
+--
+
+---
+
+
+name:economy_wide
+# Economy - Wide Growth
+
+.hi.slate[Note]: If there is an .hi.orange[innovation for the entire economy], then:
+
+  - .hi[Both cities] experience .pink[upward shift] of utility curve
+  
+  - No utility gap at original populations, so .pink[no migration]
+
+--
+
+  - Increase in utility in .purple[both cities] 
+  
+  - Still economic growth, but city sizes stay the same
+
+--
+
+---
+
+
+
+
+
+class: inverse, middle
+# Checklist
+
+.col-left[
+1) .hi[Clustering] `r emo::ji("check")`
+
+  - Reasons for firm clustering
+  
+  - Urbanization vs Localization Economies
+  
+
+
+2) .hi[City Size] `r emo::ji("check")`
+
+
+  - Zipf's Law
+  
+  - Utility & Size of Cities
+  
+  - Locational Eq.
+
+]
+
+
+.col-right[
+
+3) .hi[Intro to Growth] `r emo::ji("check")`
+
+  - Factors that lead to urban growth
+  
+  - Example with utility curves
+  
+  - Economy wide vs regional
+
+]
+
+---
+
+
+
+# Table of Contents
+
+.col-left[
+### Clustering
+.smallest[
+1. [Reasons for Firm Clustering](#cluster)
+
+1. [Urbanizations vs Localization](#urban)
+]
+
+
+### City Size
+.smallest[
+
+1. [Zipf's Law](#zipf)
+
+1. [Utility](#utility)
+
+1. [Locational Eq](#eq)
+
+]
+]
+
+.col-right[
+## Growth
+.smallest[
+
+1. [Growth factors](#growth_factors)
+
+1. [Example](#example)
+
+1. [Economy Wide Growth](#economy_wide)
+
+]
+]
+
+
+---
+
+exclude:true
+
+
+
+```{r decktape}
+p_load(pagedown)
+pagedown::chrome_print(here::here("004-growth","lecture_four.html"))
+```
+
+
+
+<!-- --- -->
+<!-- exclude: true -->
+
+<!-- ```{R, generate pdfs, include = F} -->
+<!-- system("decktape remark 02_goodsmarket_part1.html 02_goodsmarket_part1.pdf --chrome-arg=--allow-file-access-from-files") -->
+<!-- ``` -->
+
+
+
+
+
+
+
+
