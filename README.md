@@ -48,7 +48,9 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
   
 - __Week 3:__ _Land Rents_
 
-  - Lecture 5: Urban Rents
+  - Lecture 5: [Urban Rents](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/06124b810381174be50c43fe7b7432e738baba6b/Slides/005-rents/lecture_five.html)
+  
+    - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/06124b810381174be50c43fe7b7432e738baba6b/Slides/005-rents/lecture_five.pdf)
   
   - Lecture 6: Urban Land Use
   
