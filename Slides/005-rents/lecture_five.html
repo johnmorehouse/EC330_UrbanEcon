@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Econ 330: Urban Economics</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="John Morehouse" />
+    <link href="lecture_five_files/remark-css/default.css" rel="stylesheet" />
+    <link href="lecture_five_files/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="lecture_five_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Econ 330: Urban Economics
+## Lecture 5
+### John Morehouse
+### January 21st, 2020
+
+---
+
+class: inverse, center, middle
+
+
+
+
+
+# Lecture V: Rents
+
+
+---
+
+
+
+name: schedule
+
+# Schedule
+
+## Today
+
+--
+
+1) .hi.purple[Intro to Rents]
+
+2) .hi.purple[Rents] .hi.orange[Across] .hi.purple[Cities]
+
+3) .hi.purple[Rents] .hi.orange[Within] .hi.purple[Cities]
+
+--
+
+--
+
+## Upcoming
+
+  - ‼️ .hi.slate[HWI due] .hi[next class] (thurs, Jan 21)  ‼️
+  
+    - ⚠️ __No late homeworks will be accepted__ 
+
+  - .hi.slate[Reading] (Chapter IV _ToTC_)
+    
+--
+
+---
+
+
+# Taking Stock
+
+.hi.slate[First Two Weeks]: Intoduction and .hi.purple[existence, size &amp; growth] (philosophical-ish questions)
+
+--
+
+.hi.slate[Now]: fundamentals of .pink[location choice theory]. .qa[Questions]
+
+--
+
+--
+
+- Why do people choose to live in one place vs another? (SF vs Detroit)
+
+  - .hi.slate[Today]: How do these choices impact rental prices (.pink[across cities])
+
+--
+
+- Conditional on choosing to live Eugene, will individuals .hi[systematically locate] in one neighborhood vs another?
+ 
+  - .hi.slate[Today]: How do these choices impact rental prices (.purple[within city]) ?
+
+--
+
+
+.hi.slate[Later]: Formalize this. Learn __basics__ of [discrete choice modeling](https://en.wikipedia.org/wiki/Discrete_choice)
+
+
+
+
+---
+
+
+
+
+
+# Rents: An Overview
+
+
+
+&lt;img src="images/us.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+source: [Oppurtunity Atlas](https://www.opportunityatlas.org/)
+
+---
+
+
+# Rents: NY
+
+&lt;img src="images/ny.png" width="90%" style="display: block; margin: auto;" /&gt;
+source: [Oppurtunity Atlas](https://www.opportunityatlas.org/)
+
+---
+
+# Rents: Seattle
+
+&lt;img src="images/seattle.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+source: [Oppurtunity Atlas](https://www.opportunityatlas.org/)
+---
+
+
+# Rents: Chicago
+
+&lt;img src="images/chicago.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+source: [Oppurtunity Atlas](https://www.opportunityatlas.org/)
+
+---
+
+
+
+
+
+
+class: inverse, middle
+# Checklist
+
+.col-left[
+1) .hi[Intro to Rents] ✅
+
+2) .hi.purple[Rents] .hi.orange[Across] .hi.purple[Cities]
+
+
+
+3) .hi.purple[Rents] .hi.orange[Within] .hi.purple[Cities]
+
+]
+
+---
+
+
+
+
+
+# Prices across cities
+
+.hi.slate[Easy version] .purple[Supply] and .pink[demand] curves vary across cities (today)
+
+--
+
+  - Equilibrium will be .pink[different across cities] (and hence prices are different)
+
+--
+
+.hi.slate[Hard Version] Solving for equilibrium when wages respond to population changes as well (not today)
+
+
+.qa[Q]: Why would .hi[supply] and .hi.purple[demand] curves .hi.orange[vary across cities?]
+
+--
+
+.qa[A1]: .hi[Supply]: variation in local construction costs, land available for development, and land-use regulations
+
+--
+
+.qa[A2]: .hi.purple[Demand]: variation in available jobs (income), preference for housing consumption
+
+--
+
+--
+
+---
+
+
+
+# Rents: An Overview
+
+
+
+
+
+&lt;img src="lecture_five_files/figure-html/rent_plot-1.svg" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+
+
+# Urban Housing Supply Curves
+
+
+In general, supply curves across cities are impacted by: local construction costs, land available for development, and land-use regulations
+
+--
+
+- .hi[Local construction costs]: shifts .pink[intercept] (labor is more expensive for all firms in one area vs another)
+
+- .hi.purple[Land available for development] and .hi.purple[land use regulations]: slope (changes __marginal cost__) of developing land. .qa[Why?]
+
+--
+
+
+.qa[A]: Less land available to develop `\(\rightarrow\)` .hi[oppurtunity cost of developing increases] for each next plot of land. Prices get bid up faster. Similar intuition with land use regulations
+
+---
+
+
+# Urban Housing Supply Curves
+
+&lt;img src="lecture_five_files/figure-html/supply1-1.svg" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+
+
+# Urban Housing Supply Curves
+
+&lt;img src="lecture_five_files/figure-html/supply2-1.svg" style="display: block; margin: auto;" /&gt;
+
+ - .hi[pink]: lower construction cost (lower intercept)
+
+
+---
+
+
+
+
+
+# Urban Housing Supply Curves
+
+&lt;img src="lecture_five_files/figure-html/supply3-1.svg" style="display: block; margin: auto;" /&gt;
+
+
+- __black__: higher land use regs or less available land for development
+
+
+---
+
+
+
+# Example:
+
+.col-left[
+- .hi[Seattle]: 
+   
+`\begin{align*}
+R_{SEA} &amp;= 10 + H_{SEA} \\
+R_{SEA} &amp;= 25 - 2*H_{SEA}
+\end{align*}`
+
+]
+
+.col-right[
+- .hi[SF]: 
+  
+`\begin{align*}
+R_{SF} &amp;= 10 + 2*H_{SF}\\
+R_{SF} &amp;= 30 - 3*H_{SF}
+\end{align*}`
+
+]
+
+.qa[Tasks]:
+
+1) Solve for equilibrium in both cities
+
+--
+
+2) Given your answer to 1, and knowledge of the term _.hi[locational equilibrium]_ what can you say must be the case about .hi.purple[wages and or amenity values] in one city vs the other?
+
+--
+
+---
+
+
+
+
+# Example
+
+.qa[Tasks]:
+
+1) Solve for equilibrium in both cities
+
+`\begin{align*}
+\text{SEA}: (H_{SEA}^\star, R_{SEA}^\star) &amp;= (5,15)\\
+\text{SF}: (H_{SF}^\star, R_{SF}^\star) &amp;= (4,18)
+\end{align*}`
+
+
+
+2) Given your answer to 1, and knowledge of the term _.hi[locational equilibrium]_ what can you say must be the case about .hi.purple[wages and or amenity values] in one city vs the other?
+
+--
+
+  - Rental prices are higher in SF. .hi[In equilibrium], utility levels are equalized across cities. Thus, it must be that .pink[either wages] .hi.orange[and or] .purple[amenities] are higher in SF than SEA
+
+--
+
+
+---
+
+
+
+# Stepping Back
+
+One assumption underling the above example:
+
+--
+
+&lt;center&gt;
+&lt;font size="12"&gt; Perfect competition &lt;/font&gt;
+&lt;/center&gt;
+
+--
+
+Is this reasonable? .hi.purple[Discuss]
+
+--
+
+- SF has rent control (not .hi[perfectly competitive]). I am not as sure about Seattle rental market
+
+- In the case of .hi.orange[monopoly], the outcomes here are pretty different. We will do the labor version of this (monopsony) later in the course
+
+--
+
+
+---
+
+class: inverse, middle
+# Checklist
+
+.col-left[
+1) .hi[Intro to Rents] ✅
+
+2) .hi[Rents] .hi.orange[Across] .hi[Cities] ✅
+
+  - Supply and Demand variation 
+  
+  - Eq computation
+
+
+3) .hi.purple[Rents] .hi.orange[Within] .hi.purple[Cities]
+
+]
+
+
+---
+
+
+
+
+# The Bid-Rent Curve
+
+The __Bid - Rent Curve__ is the _.pink[relationship between housing prices and the distance of land from the city center]_ &lt;sup&gt;.pink[†]&lt;/sup&gt;
+
+.footnote[
+.pink[†] It actually does not have to be the city center -- can be a point of attraction. In this class we will always use the city center though.
+]
+
+These curves vary across sectors
+
+--
+
+- __Consumer Bid rent curve__: .pink[commuting costs]
+
+- Rural Bid Rent: .pink[fertility] of land
+
+--
+
+- Manufacturing: Accessibility to .pink[consumers] and .purple[suppliers]
+
+- Tech/info: Accessibility to .pink[Information]
+
+--
+
+--
+
+---
+
+
+
+
+# Housing Prices Model
+
+We now build a simple model of rental/housing prices .hi.orange[within] a city
+
+--
+
+1) Commuting cost is .hi[only location factor] in decision making
+
+  - .pink[All locations] are otherwise identical
+
+--
+
+2) Only .hi.orange[one member] of household commutes to employment area
+
+--
+
+3) Only considers the .hi[monetary (not time) cost of commuting]
+
+--
+
+4) Noncommuting travel is .purple[insignificant]
+
+--
+
+5) Public services, .hi.purple[taxes, amenities] are the .purple[same everywhere] (implication from 1)
+
+--
+
+--
+
+
+---
+
+
+
+
+
+# Locational Indifference
+
+.hi[Axiom 1]: _Housing prices adjusts until there is locational indifference_ (and prices in general)
+
+  - IE: until an increase in rent for a closer location just offsets the lower commuting costs
+  
+--
+
+.hi.orange[In math]:
+
+`\begin{align*}
+\Delta P \cdot h + \Delta x \cdot t = 0
+\end{align*}`
+
+
+.col-left[
+
+- P: .hi[price] of housing (price per square foot)
+
+- h: .hi.purple[amount] of housing (in `\(ft^2\)`)
+
+- x: .hi.orange[distance] to employment area
+
+]
+
+.col-right[
+
+- t: .hi.green[commuting cost] per mile
+
+]
+
+
+---
+
+# Slope of the Housing Bid-Rent Curve 
+
+
+If there is locational indifference we can derive the slope of the bid-rent curve:
+
+`\begin{align*}
+\Delta P \cdot h + \Delta x \cdot t &amp;= 0
+\end{align*}`
+
+
+---
+
+
+# Slope of the Housing Bid-Rent Curve 
+
+
+If there is locational indifference we can derive the .hi.purple[slope] of the .hi[bid-rent] curve:
+
+`\begin{align*}
+\Delta P \cdot h + \Delta x \cdot t &amp;= 0\\
+\Delta P \cdot h &amp;= -\Delta x \cdot t
+\end{align*}`
+
+
+---
+
+
+# Slope of the Housing Bid-Rent Curve 
+
+
+If there is locational indifference we can derive the .hi.purple[slope] of the .hi[bid-rent] curve:
+
+`\begin{align*}
+\Delta P \cdot h + \Delta x \cdot t &amp;= 0\\
+\Delta P \cdot h &amp;= -\Delta x \cdot t\\
+\frac{\Delta P}{\Delta x} &amp;= -\frac{t}{h}
+\end{align*}`
+
+
+--
+
+.hi.slate[Notice]: `\(\frac{\Delta P}{\Delta x}\)` is the .purple[slope] of the .pink[bid-rent] curve
+
+--
+
+  - price is on the verticle axis, distance is on the horizontal. So this is rise over run
+
+--
+
+--
+
+
+---
+
+
+# Another Derivation
+
+Suppose you have decided that the optimal amount of money to spend on housing and commuting per month is `\(M^*\)`
+
+- You can allocate this as
+
+`\begin{align*}
+P\cdot h + x \cdot  t = M^*
+\end{align*}`
+
+
+- Since we graph the bid rent curve in the (x,P) space, we solve for p:
+
+--
+
+`\begin{align*}
+P\cdot h + x \cdot  t &amp;= M^*\\
+P\cdot h &amp;= M^* - x\cdot t
+\end{align*}`
+
+
+--
+
+
+
+---
+
+
+
+
+# Another Derivation
+
+Suppose you have decided that the optimal amount of money to spend on housing and commuting per month is `\(M^*\)`
+
+- You can allocate this as
+
+`\begin{align*}
+P\cdot h + x \cdot  t = M^*
+\end{align*}`
+
+
+- Since we graph the bid rent curve in the (x,P) space, we solve for p:
+
+
+
+`\begin{align*}
+P\cdot h + x \cdot  t &amp;= M^*\\
+P\cdot h &amp;= M^* - x\cdot t\\
+P &amp;= \frac{M^*}{h} - \frac{t}{h} \cdot x
+\end{align*}`
+
+--
+
+- Slope: `\(\Delta P = 0 - \frac{t}{h} \cdot \Delta x \implies \frac{\Delta P}{\Delta x} = -\frac{t}{h}\)`
+  
+  - Can also take derivative if p w.r.t to x and get the same thing, if that is easier for you
+
+
+--
+
+
+
+---
+
+
+# No Substitution
+
+.hi.slate[Example] Suppose the following:
+
+--
+
+  - Each household has $800 a month to spend on housing and commuting
+
+--
+
+  - All rental units are the same size, with each HH occupying a rental unit that is 1000 sq ft
+  
+--
+
+  - Monthly commuting cost is $50 dollars per mile from employment center
+
+--
+
+--
+
+.qa[Task]: Draw the housing - price curve. Put miles from city center on .hi.orange[x axis] and price per square foot on .hi[y axis]
+
+
+---
+
+
+
+
+# Example: The housing price curve
+
+&lt;img src="lecture_five_files/figure-html/bid_rent_nosub-1.svg" style="display: block; margin: auto;" /&gt;
+
+a: max WTP for a square foot (at center of city)
+
+b: further away from center HH is willing to live
+
+
+
+---
+
+
+
+# Substitution
+
+.qa[Q1]: If you really wanted to live closer to campus -- or an exciting downtown in a big city -- would you be willing to live in a smaller apartment to do so?
+
+
+--
+
+.qa[A1]: Most people&lt;sup&gt;™️ &lt;/sup&gt;: Yes. You are willing to .pink[substitute]
+
+--
+
+.qa[Q2]: What do I mean by .pink[substitute]? Substitute what?
+
+--
+
+.qa[A2]: Substitute housing consumption for .purple[lower commuting cost] (and whatever else being close to the center of the city gets you)
+
+  
+
+--
+
+---
+
+
+# Substitution
+
+Let's formalize the mechanism for substitution a bit:
+
+--
+
+ .pink[higher prices] `\(\implies\)` .purple[higher oppurtunity cost] per square foot of housing (for the consumer)
+
+--
+
+--
+
+- As price of rent increases, consumers are likely to substitute (atleast somewhat) towards other goods, decreasing the square footage of housing demanded
+
+--
+
+- __Housing units closer to city centers are thus likely to be smaller in size__
+
+--
+
+
+
+---
+
+
+# Adding substitution to the model
+
+
+
+
+.qa[Q3]: Did our model of locational indifference accomdate for substitution? Why or Why not?
+
+`\begin{align*}
+\Delta P \cdot h + \Delta x \cdot t &amp;= 0
+\end{align*}`
+
+--
+
+.qa[A3]: No because `\(h\)` (the quantity of housing consumed) is .hi[independent of distance] from center ($x$)
+
+--
+
+
+.purple[_If consumers can substitute_], our locational indifference condition becomes:
+
+--
+
+`\begin{align*}
+\Delta P \cdot h(x)  + \Delta x \cdot t = 0 
+\end{align*}`
+
+--
+
+- Where `\(h(x)\)` is an _increasing_ function of x 
+
+--
+
+  - .hi.slate[Ex]: `\(h(10) &gt; h(5)\)` (the quantity of housing demanded 10 miles from the center exceeds that of 5 miles)
+  
+--
+
+--
+
+
+---
+
+
+
+# Quick Q
+
+
+
+.qa[Q4] What is the new slope of the bid-rent curve?
+
+--
+
+`\begin{align*}
+\frac{\Delta P}{\Delta x} = -\frac{t}{h(x)}
+\end{align*}`
+
+--
+
+
+.qa[Q5] Using the equation above what happens to the .purple[slope of the housing bid-rent] curve as x increases. .hi[Why]?
+
+
+--
+
+.qa[A5]: As x increase, we get farther away from the center. 
+
+  - Since higher value of x `\(\rightarrow\)` higher value of h `\(\rightarrow\)` smaller value of `\(\frac{1}{h(x)}\)`. This means `\(-\frac{1}{h(x)}\)` will be _less negative_
+  
+--
+
+__Let's graph this, to make sure we get it__
+
+
+---
+
+# Model with Substitution Graph
+
+
+&lt;img src="lecture_five_files/figure-html/bid_rent_sub-1.svg" style="display: block; margin: auto;" /&gt;
+
+.hi.purple[purple]: no substitution
+
+red: substitution
+
+---
+
+
+
+
+class: inverse, middle
+# Checklist
+
+.col-left[
+1) .hi[Intro to Rents] ✅
+
+
+2) .hi[Rents] .hi.orange[Across] .hi[Cities] ✅
+
+  - Supply and Demand variation across cities
+  
+  - Eq computation
+
+
+3) .hi[Rents] .hi.orange[Within] .hi[Cities] ✅
+
+  - The bid rent curve for consumers
+  
+    + Locational Indifference
+    
+    + With substitution
+    
+    + Without Substitution
+
+]
+
+---
+
+
+
+
+
+```r
+p_load(pagedown)
+pagedown::chrome_print(here::here("005-rents","lecture_five.html"))
+```
+
+
+
+
+
+&lt;!-- --- --&gt;
+&lt;!-- exclude: true --&gt;
+
+&lt;!-- ```{R, generate pdfs, include = F} --&gt;
+&lt;!-- system("decktape remark 02_goodsmarket_part1.html 02_goodsmarket_part1.pdf --chrome-arg=--allow-file-access-from-files") --&gt;
+&lt;!-- ``` --&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
