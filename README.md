@@ -52,7 +52,9 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
   
     - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/06124b810381174be50c43fe7b7432e738baba6b/Slides/005-rents/lecture_five.pdf)
   
-  - Lecture 6: Urban Land Use
+  - Lecture 6: [Urban Land Use](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/afe9c2b88b55caf3eb7882865e0e3181326935b1/Slides/006-land_use/lecture_6.html)
+  
+    - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/afe9c2b88b55caf3eb7882865e0e3181326935b1/Slides/006-land_use/lecture_6.pdf)
   
 
 - __Week 4:__ _Neighborhood Choice_
