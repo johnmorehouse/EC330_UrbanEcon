@@ -59,7 +59,9 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
 
 - __Week 4:__ _Neighborhood Choice_
 
-  - Lecture 7: Neighborhood Choice Part I
+  - Lecture 7: [Neighborhood Choice Part I](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/83e782c7076e138dd6b90bb071cb35f24c9b8a3e/Slides/007-nbhd_choice/lecture_seven.html)
+  
+    - [.pdf version](https://github.com/johnmorehouse/EC330_UrbanEcon/blob/master/Slides/007-nbhd_choice/lecture_seven.pdf)
   
   - Lecture 8: Neighborhood Choice Part II
 
