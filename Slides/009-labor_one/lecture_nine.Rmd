@@ -1,0 +1,1185 @@
+---
+title: "Econ 330: Urban Economics"
+subtitle: "Lecture 9"
+author: "John Morehouse"
+date: "Feb 4th, 2020"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    # self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, center, middle
+
+```{R, setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(
+  broom, here, tidyverse,
+  latex2exp, ggplot2, ggthemes, viridis, extrafont, gridExtra,
+  kableExtra,
+  dplyr, magrittr, knitr, parallel, tufte,emo
+)
+# Define pink color
+red_pink <- "#e64173"
+turquoise <- "#20B2AA"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+# Dark slate grey: #314f4f
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)
+opts_chunk$set(dev = "svg")
+options(device = function(file, width, height) {
+  svg(tempfile(), width = width, height = height)
+})
+# A blank theme for ggplot
+theme_empty <- theme_bw() + theme(
+  line = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  axis.text = element_blank(),
+  plot.title = element_blank(),
+  axis.title = element_blank(),
+  plot.margin = structure(c(0, 0, -0.5, -1), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_simple <- theme_bw() + theme(
+  line = element_blank(),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  axis.text.x = element_text(size = 18, family = "STIXGeneral"),
+  axis.text.y = element_blank(),
+  axis.ticks = element_blank(),
+  plot.title = element_blank(),
+  axis.title = element_blank(),
+  # plot.margin = structure(c(0, 0, -1, -1), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes_math <- theme_void() + theme(
+  text = element_text(family = "MathJax_Math"),
+  axis.title = element_text(size = 22),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = "grey70",
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes_serif <- theme_void() + theme(
+  text = element_text(family = "MathJax_Main"),
+  axis.title = element_text(size = 22),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = "grey70",
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes <- theme_void() + theme(
+  text = element_text(family = "Fira Sans Book"),
+  axis.title = element_text(size = 18),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = grey_light,
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+```
+
+
+
+# Lecture 9: Urban Labor Markets I
+
+---
+
+
+# Schedule
+
+
+## Today
+
+.pull-left[
+0) .hi.purple[Rehash model from last class]
+
+1) .hi.purple[Labor Markets and Urban Econ]
+
+2) .hi.purple[Urban Labor Demand]
+]
+
+.pull-right[
+
+3) .hi.purple[Urban Labor Supply]
+
+4) .hi.purple[Equilibrium]
+
+]
+
+
+--
+
+## Upcoming
+
+.col-left[
+
+- .hi.slate[Read]
+  
+- .hi.slate[HWII] due next class `r emo::ji("warning")``r emo::ji("warning")``r emo::ji("warning")`
+  
+- .hi.slate[Midterm]: one week from today  `r emo::ji("warning")``r emo::ji("warning")``r emo::ji("warning")`
+  
+]
+
+--
+
+---
+
+
+# Model from Last Class
+
+
+---
+
+
+
+# Model from Last Class
+
+
+---
+
+
+# Model from Last Class
+
+---
+
+
+
+
+class: inverse, middle
+
+# Checklist
+.col-left[
+0) .hi[Rehash model from last class]: `r emo::ji("check")`
+
+1) .hi.purple[Labor Markets and Urban Econ: overview]
+
+2) .hi.purple[Urban Labor Demand]
+]
+
+.col-right[
+
+3) .hi.purple[Urban Labor Supply]
+
+4) .hi.purple[Equilibrium]
+
+]
+
+---
+
+
+# Labor Markets
+
+
+Why labor econ in urban econ?
+
+- David Card: 
+
+--
+
+  > A city _is_ a labor market
+
+.hi[Question]: What does Card mean? Do you agree?
+
+--
+
+
+--
+
+- Cities provide incentives for firms and workers to locate close to each other
+
+- In a sense, the density of a city is generated entirely by incentives in the labor market
+
+--
+
+---
+
+
+# Motivation
+
+To further motivate our study of urban labor markets, lets ask the following:
+
+.qa[Question]: If we wanted to model .hi.orange[individual] decision making for locations, what things would we throw into this model? 
+
+  - Put differently, what are some of the most important features for where people decide to live?
+
+--
+
+- .hi[wages]
+
+- Rents
+
+- Amenities (this can include tons of things)
+
+--
+
+- Birthplace?
+
+- Distance to birthplace?
+
+--
+
+
+--
+
+---
+
+
+# Motivation
+
+- It turns out that wages are a pretty big feature of individual and household location choices
+
+--
+
+  - If Amazon opens in Portland, will this impact where people live?
+  
+--
+
+.qa[Q2] Let's now take it as given that people care about their wage. Followup question: How do wages respond to changes in household/individual location decisions? 
+
+--
+
+.hi.orange[It depends]`r emo::ji("tm")` (on what?)
+
+  - The structure of the labor market (production proccesses, competitiveness of the labor market)
+
+--
+
+
+---
+
+
+
+
+
+
+
+
+# Labor Markets
+
+A labor market consists of:
+
+1. Buyers of labor (firms)
+
+  - Note: __firms__ generate labor demand 
+
+2. Sellers of labors (people)
+
+  - Note: __people__ generate labor supply
+
+
+---
+
+# Labor EC101
+
+Usually:
+
+- Labor economists discuss labor supply as being generated from a labor-leisure tradeoff
+
+  - Model: Rational agent's making optimal choices over leisure choice/education choice, etc
+
+--
+
+Urban is different
+
+--
+  
+--
+
+  - Assume that labor supply is generated from _location choices_
+  
+  - Assume people work the same amount, but choose where to work and live
+
+--
+
+---
+
+# Labor EC101
+
+What do both fields have (somewhat) in common?
+
+
+--
+
+<center>
+<font size="15"> Labor Demand </font>
+</center>
+
+--
+
+
+- Definition: .hi[Labor Demand]
+
+  - A _set_ of quantities of labor demanded corresponding to a _set_ of wages (the entire curve)
+ 
+ 
+.hi.purple[Question]:
+
+--
+
+How is a change in _labor demand_ different than a change in _quantity of labor demanded_?
+
+--
+
+
+---
+
+
+
+
+class: inverse, middle
+
+# Checklist
+.col-left[
+0) .hi[Rehash model from last class]: `r emo::ji("check")`
+
+1) .hi[Labor Markets and Urban Econ: overview]: `r emo::ji("check")`
+
+2) .hi[Urban Labor Demand]
+]
+
+.col-right[
+
+3) .hi.purple[Urban Labor Supply]
+
+4) .hi.purple[Equilibrium]
+
+]
+
+---
+
+
+# Labor EC101: Labor Demand
+
+We will start with the .hi[competitive] model:
+
+--
+
+## Assumptions
+
+1. Firms seek to maximize profits
+
+--
+
+2. Markets are perfectly competitive (in .pink[both] inputs and output)
+
+--
+
+- .hi[Implication]: 
+  
+  - No individual firm can influence the price of labor (or other inputs)
+  
+  - No individual firm can influence the output price
+  
+  
+--
+
+--
+
+Are these assumptions reasonable? Discuss
+
+--
+
+---
+
+
+# Firm Labor Demand
+
+Can we derive a rule for how much labor the firm will hire in the competitive model?
+
+
+\begin{align*}
+\pi &= P*Q - TC
+\end{align*}
+
+
+
+---
+
+
+
+
+# Firm Labor Demand
+
+Can we derive a rule for how much labor the firm will hire in the competitive model?
+
+
+\begin{align*}
+\pi &= P*Q - TC\\
+\pi &= \underbrace{P*F(L,K)}_\text{TR} - \underbrace{w*L-r*K}_{\text{TC}}
+\end{align*}
+
+where:
+
+--
+
+ - $P$: output price
+
+ - $F(L,K)$: quantity produced, as a function of labor and capital utilized. Sometimes written $Q = F(L,K)$
+
+--
+
+ - $w$: wage rate, $L$: total labor employed
+ 
+--
+
+ - $r$: rental rate of capital, $K$: capital used
+
+--
+
+
+---
+
+
+# Firm Labor Demand
+
+.hi.orange[Claim]: The firm hires more labor so long as the _marginal profit_ w.r.t to labor is positive. 
+
+  - __Defn__: Marginal Profit (w.r.t to labor), $\frac{\Delta \pi}{\Delta L}$: The change in profit from hiring an additional unit of labor
+
+--
+
+"Proof" of claim:
+
+- If $\frac{\Delta \pi}{\Delta L} <0$, the added profit from an additional unit of labor is negative (ie a loss), so the firm _should not_ hire the next unit
+
+
+--
+
+- If $\frac{\Delta \pi}{\Delta L} > 0$ then the added profit from an additional unit of labor is positive (ie a gain), so the firm should hire the next unit
+
+--
+
+
+--
+
+- If $\frac{\Delta \pi}{\Delta L} = 0$, this is optimal for the firm (next unit of labor yields negative profit)
+
+--
+
+--
+
+---
+
+
+# Reminder
+
+From 201, remember that the following:
+
+- .hi.slate[Marginal Product (of labor)]: The change in output from a one unit change in the amount of labor employed
+
+--
+
+  - $MP_L = \frac{\Delta F(L,K)}{\Delta L}$
+
+--
+
+--
+
+- .hi.slate[Marginal Revenue Product (of labor)]: The _value_ of the change in output from a one unit change in the amount of labor employed
+
+--
+
+  -  $MRP_L = P*\frac{\Delta F(L,K)}{\Delta L}$
+
+--
+--
+
+
+---
+
+#Firm Labor Demand: Math
+
+So what is $\frac{\Delta \pi}{\Delta L}$?
+
+--
+
+\begin{align*}
+\frac{\Delta \pi}{\Delta L} = P*\frac{\Delta F(L,K)}{\Delta L} - w*\frac{\Delta L}{\Delta L}  
+\end{align*}
+
+
+--
+
+---
+
+
+
+#Firm Labor Demand: Math
+
+So what is $\frac{\Delta \pi}{\Delta L}$?
+
+
+
+\begin{align*}
+\frac{\Delta \pi}{\Delta L} &= P*\frac{\Delta F(L,K)}{\Delta L} - w*\frac{\Delta L}{\Delta L} \\
+&= P*MP_L - w\\
+& = MRP_L - w
+\end{align*}
+
+--
+
+Now, set $\frac{\Delta \pi}{\Delta L}=0$ to get the labor demand curve:
+
+\begin{align*}
+ MRP_L - w =0 \implies MRP_L = w
+\end{align*}
+
+
+--
+
+---
+
+
+
+
+
+
+
+
+# Urban Labor Demand: Graph
+
+
+```{R, supply_demand, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+labor_demand <- function(x)  20 - x
+
+labor_demand2 <- function(x)  25 - x
+
+
+
+ggplot(data.frame(x=c(0, 8)), aes(x)) +
+  stat_function(fun=labor_demand, col = "purple")+
+  labs(x = "L",y = "W")+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept = 0)+
+  geom_hline(yintercept = 0)
+```
+
+
+---
+
+
+
+
+# Demand Variation
+
+Why might .hi[labor demand] curves vary across cities?
+
+--
+
+1) Differences in productivity across cities (agglomeration)
+
+
+--
+
+
+--
+
+2) Variation in Business Taxes Across cities
+
+--
+
+
+--
+
+3) Industrial public service infastructure (electricity, water, gas pipelines)
+
+
+--
+
+--
+
+4) Land use policies (stricter zoning $\implies$ higher land price $\implies$ less money for other inputs)
+
+--
+
+
+--
+
+5) Demand for cities exports 
+
+  - If a particular type of good is manufactured in a given city, and demand for this good increases, demand shifts out
+
+--
+
+
+---
+
+
+
+
+
+
+# Labor Demand: Ex 1
+
+.qa[Q]: What would two cities where everything is equal except one has a higher productivity of labor look like?
+
+--
+
+
+```{R, supply_demand2, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+labor_demand <- function(x)  20 - x
+
+labor_demand2 <- function(x)  25 - x
+
+
+
+
+ggplot(data.frame(x=c(0, 8)), aes(x)) +
+  stat_function(fun=labor_demand, col = "purple")+
+  stat_function(fun= labor_demand2, col = red_pink)+
+  labs(x = "L",y = "W")+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept = 0)+
+  geom_hline(yintercept = 0)+
+  geom_text(x = 5, y= 20, label = "Higher Productivity", hjust=1)
+
+```
+
+--
+
+
+---
+
+
+#Labor Demand: Ex 2
+
+.qa[Q]: What about a city with lower export demand?
+
+--
+
+```{R, supply_demand3, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+
+labor_demand2 <- function(x)  25 - x
+labor_demand3 <- function(x)  15 - x
+
+
+
+
+
+ggplot(data.frame(x=c(0, 8)), aes(x)) +
+  stat_function(fun=labor_demand, col = "purple")+
+  stat_function(fun= labor_demand3, col = "#A70000")+
+  labs(x = "L",y = "W")+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept = 0)+
+  geom_hline(yintercept = 0)+
+  geom_text(x = 5, y= 10, label = "Lower Export Demand", hjust=1)
+
+
+```
+--
+
+---
+
+
+class: inverse, middle
+
+# Checklist
+.col-left[
+0) .hi[Rehash model from last class]: `r emo::ji("check")`
+
+1) .hi[Labor Markets and Urban Econ: overview]: `r emo::ji("check")`
+
+2) .hi[Urban Labor Demand]: `r emo::ji("check")`
+]
+
+.col-right[
+
+3) .hi.purple[Urban Labor Supply]
+
+4) .hi.purple[Equilibrium]
+
+]
+
+---
+
+#Labor Supply
+
+
+
+Labor supply is driven from location decisions of individuals. What generates location choices?
+
+--
+
+1) .hi[Wages]
+
+2) Rents
+
+3) Amenities
+
+4) Other, individual specific stuff (like birth location)
+
+--
+
+---
+
+# Labor Supply
+
+A _set_ of quantities of labor supplied corresponding to a _set_ of wages. 
+
+.qa[Q1]: What causes _movement along_ the labor supply curve?
+
+--
+
+- A change in wages. That's it!
+
+--
+
+
+.qa[Q2]: What causes a _shift_ of the labor supply curve?
+
+--
+
+1) Changes in amenities (building of a nicer school, eroding of air quality)
+
+2) Changes in residential government expenditures (increase in taxes drives people away, increases in govt spending brings people in)
+
+--
+
+
+---
+
+
+# Labor Supply
+
+Knowing how responsive workers are to changes in wages is key for vast swaths of policies
+
+- Estimates for labor supply elasticities are pretty big
+
+- If $\varepsilon_{\text{workforce},\text{wage}} = 2$, what does this mean?
+
+--
+
+.hi.orange[In general] estimated labor supply elasticities are higher for workers with a college degree than without a college degree. What does this mean?
+
+--
+
+  - College educated individuals are more responsive to changes in wages w.r.t to their location decisions
+
+--
+
+--
+
+
+---
+
+
+
+
+# Labor Supply Example
+
+
+```{R, labor_supply, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+labor_supply <- function(x) 5+x
+
+
+
+ggplot(data.frame(x=c(0, 8)), aes(x)) +
+  stat_function(fun=labor_supply, col = "purple")+
+  labs(x = "L",y = "W")+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept = 0)+
+  geom_hline(yintercept = 0)
+```
+
+
+
+---
+
+
+
+# Labor Supply
+
+
+.qa[Question]: What happens when a city improves its school quality?
+
+--
+
+```{R, labor_supply2, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+labor_supply <- function(x) 5+x
+labor_supply2 <- function(x) 4+x
+
+
+ggplot(data.frame(x=c(0, 8)), aes(x)) +
+  stat_function(fun=labor_supply, col = "purple")+
+  stat_function(fun=labor_supply2, col = "#A70000")+
+  labs(x = "L",y = "W")+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept = 0)+
+  geom_hline(yintercept = 0)+ 
+  geom_text(x = 2, y = labor_supply2(2), label = "better school quality", hjust=-.01) 
+
+```
+
+--
+
+---
+
+
+
+
+
+
+class: inverse, middle
+# Checklist
+.col-left[
+0) .hi[Rehash model from last class]: `r emo::ji("check")`
+
+1) .hi[Labor Markets and Urban Econ: overview]: `r emo::ji("check")`
+
+2) .hi[Urban Labor Demand]: `r emo::ji("check")`
+]
+
+.col-right[
+
+3) .hi[Urban Labor Supply] `r emo::ji("check")`
+
+4) .hi.purple[Equilibrium]
+
+]
+
+
+
+---
+
+#Equilibrium 
+
+__Defn__
+
+  - A .hi[labor market equilibrium] is a pair of points $(L^*, W^*)$ such that:
+  
+    - labor supply = labor demand
+
+  - In other words: a labor market eq is where there is no excess supply or demand
+  
+--
+
+We usually think of cities as being "seperate" labor markets, so the eqs can be different across cities
+
+--
+
+---
+
+
+# Equilibrium: Example
+
+```{R, eq1, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+ggplot(data.frame(x=c(0, 15)), aes(x)) +
+  stat_function(fun=labor_demand, col = "purple")+
+  stat_function(fun= labor_supply, col = red_pink)+
+  labs(x = "L",y = "W")+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept = 0)+
+  geom_hline(yintercept = 0)
+
+```
+
+---
+
+
+# Min Wage Refresher
+
+Recall from EC201: minimum wages are a form of .hi[price controls]. Specifically, a minimum wage is a:
+
+--
+
+- Price floor: dictates the _minimum_ allowed price for transactions in a marketplace
+
+--
+
+We say that a price floor is .hi.purple[effective] if it has an impact on the market equilibrium
+
+--
+
+  - Price floors that are below the market price are ineffective 
+
+--
+
+---
+
+# Min Wage Refresher
+
+Is the following effective/ineffective?:
+
+```{R, min1, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+ggplot(data.frame(x=c(0, 15)), aes(x)) +
+  stat_function(fun=labor_demand, col = "purple")+
+  stat_function(fun= labor_supply, col = red_pink)+
+  labs(x = "L",y = "W")+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept = 0)+
+  geom_hline(yintercept = 0)+
+  geom_hline(yintercept = 6)
+
+```
+
+
+---
+
+
+# Min Wage Refresher
+
+The following is .hi[ineffective]
+
+```{R, min1.5, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+ggplot(data.frame(x=c(0, 15)), aes(x)) +
+  stat_function(fun=labor_demand, col = "purple")+
+  stat_function(fun= labor_supply, col = red_pink)+
+  labs(x = "L",y = "W")+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept = 0)+
+  geom_hline(yintercept = 0)+
+  geom_hline(yintercept = 6)
+
+```
+
+
+---
+
+
+# Min Wage Refresher
+
+Is the following effective/ineffective?:
+
+```{R, min2, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+ggplot(data.frame(x=c(0, 15)), aes(x)) +
+  stat_function(fun=labor_demand, col = "purple")+
+  stat_function(fun= labor_supply, col = red_pink)+
+  labs(x = "L",y = "W")+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept = 0)+
+  geom_hline(yintercept = 0)+
+  geom_hline(yintercept = 14)
+
+```
+
+
+---
+
+
+
+
+# Min Wage Refresher
+
+The following is .hi[effective]
+
+```{R, min3, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+ggplot(data.frame(x=c(0, 15)), aes(x)) +
+  stat_function(fun=labor_demand, col = "purple")+
+  stat_function(fun= labor_supply, col = red_pink)+
+  labs(x = "L",y = "W")+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept = 0)+
+  geom_hline(yintercept = 0)+
+  geom_hline(yintercept = 14)
+
+```
+
+
+---
+
+
+# Min Wage Refresher
+
+
+```{R, min4, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+ggplot(data.frame(x=c(0, 15)), aes(x)) +
+  stat_function(fun=labor_demand, col = "purple")+
+  stat_function(fun= labor_supply, col = red_pink)+
+  labs(x = "L",y = "W")+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept = 0)+
+  geom_hline(yintercept = 0)+
+  geom_hline(yintercept = 14)+
+  geom_segment(x = 6,xend=6,y=0, yend= 14,linetype = "dashed" )+
+  geom_segment(x = 9,xend=9,y=0, yend= 14,linetype = "dashed" )+
+  geom_text(x=6,y=0, label = "LD: 6", vjust=1.2)+
+  geom_text(x=9,y=0, label = "LS: 9",  vjust=1.2)
+  
+  
+
+```
+---
+
+
+
+# Example: Two Cities
+
+If we treat cities as two _seperate_ labor markets, have:
+
+.pull-left[
+
+```{R, city_1, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+demand_city1 <- function(x) 10 - 2*x
+supply_city1 <- function(x) 3 + 2*x
+
+ggplot(data.frame(x=c(0, 6)), aes(x)) +
+  stat_function(fun=demand_city1, col = "purple")+
+  stat_function(fun= supply_city1, col = "#A70000")+
+  labs(x = "L",y = "W")+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept = 0)+
+  geom_hline(yintercept = 0)+
+  geom_segment(x = 0, xend =7/4, y = demand_city1(7/4), yend = demand_city1(7/4), linetype = "dashed" )+
+  geom_segment(x = 7/4, xend =7/4, y = 0, yend = demand_city1(7/4), linetype = "dashed" )
+```
+
+]
+
+.pull-right[
+
+
+```{R, city_2, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+demand_city2 <- function(x) 12 - 2*x
+supply_city2 <- function(x) 4 + 4*x
+
+
+
+
+ggplot(data.frame(x=c(0, 5)), aes(x)) +
+  stat_function(fun=demand_city2, col = "purple")+
+  stat_function(fun= supply_city2, col = "#A70000")+
+  labs(x = "L",y = "W")+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept = 0)+
+  geom_hline(yintercept = 0)+
+  geom_segment(x = 0, xend =8/6, y = demand_city2(8/6), yend = demand_city2(8/6), linetype = "dashed" )+
+  geom_segment(x = 8/6, xend =8/6, y = 0, yend = demand_city2(8/6), linetype = "dashed" )
+
+
+```
+
+]
+
+
+---
+
+
+#Significance?
+
+__2 Questions__
+
+
+- Why do we care so much about modeling cities as different labor markets? .hi.purple[Discuss]
+  
+--
+
+- Do you think all labor markets across cities and industries are competitive? .hi.purple[Discuss]
+
+
+--
+
+
+---
+
+# Some Notes
+
+- All else equal, low tax cities grow faster than high tax cities
+
+
+  - Elasticity (business activity, taxes)
+  
+--
+
+  - Across cities: -0.1 to -0.6
+  
+  -  Within cities: -1.0 to -3.0
+
+--
+
+ - Manufacturers are more sensitive to tax differences
+
+
+---
+
+class: inverse, middle
+# Checklist
+.col-left[
+0) .hi[Rehash model from last class]: `r emo::ji("check")`
+
+1) .hi[Labor Markets and Urban Econ: overview]: `r emo::ji("check")`
+
+2) .hi[Urban Labor Demand]: `r emo::ji("check")`
+]
+
+.col-right[
+
+3) .hi[Urban Labor Supply]: `r emo::ji("check")`
+
+4) .hi[Equilibrium]: `r emo::ji("check")`
+
+]
+
+---
+
+
+exclude: true
+
+
+```{r decktape}
+p_load(pagedown)
+pagedown::chrome_print(here::here("009-labor_one","lecture_nine.html"))
+```
+
+
+
+
+
+<!-- --- -->
+<!-- exclude: true -->
+
+<!-- ```{R, generate pdfs, include = F} -->
+<!-- system("decktape remark 02_goodsmarket_part1.html 02_goodsmarket_part1.pdf --chrome-arg=--allow-file-access-from-files") -->
+<!-- ``` -->
+
+
+
+
+
+
+
+
