@@ -63,13 +63,17 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
   
     - [.pdf version](https://github.com/johnmorehouse/EC330_UrbanEcon/blob/master/Slides/007-nbhd_choice/lecture_seven.pdf)
   
-  - Lecture 8: Neighborhood Choice Part II
+  - Lecture 8: [Neighborhood Choice Part II](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/561555bef47f1814b13fe25d719c6bca1999067f/Slides/008-nbhd_choiceII/lecture_8.html)
+  
+    - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/561555bef47f1814b13fe25d719c6bca1999067f/Slides/008-nbhd_choiceII/lecture_8.pdf)
 
 
 
 - __Week 5:__ _Local Labor Markets_
 
-  - Lecture 9: Local Labor Markets Part I
+  - Lecture 9: [Local Labor Markets Part I](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/561555bef47f1814b13fe25d719c6bca1999067f/Slides/009-labor_one/lecture_nine.html)
+  
+  - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/561555bef47f1814b13fe25d719c6bca1999067f/Slides/009-labor_one/lecture_nine.pdf)
   
   - Lecture 10: Local Labor Markets Part II
   
