@@ -73,16 +73,18 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
 
   - Lecture 9: [Local Labor Markets Part I](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/561555bef47f1814b13fe25d719c6bca1999067f/Slides/009-labor_one/lecture_nine.html)
   
-  - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/561555bef47f1814b13fe25d719c6bca1999067f/Slides/009-labor_one/lecture_nine.pdf)
+    - [.pdf version] (https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/561555bef47f1814b13fe25d719c6bca1999067f/Slides/009-labor_one/lecture_nine.pdf)
   
-  - Lecture 10: Local Labor Markets Part II
+  - Lecture 10: ~~Local Labor Markets Part II~~ Finished lecture 9 and Midterm Review
   
 
 - __Week 6:__ _Midterm_
 
   - Lecture 11: Midterm Exam
   
-  - Lecture 12: Introduction to Place Based Policies
+  - Lecture 12: [Introduction to Place Based Policies](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/5640bd095d52bc68df893a8207a8276de3abb629/Slides/012-place_based_policy/lecture_12.html)
+  
+    - .[pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/5640bd095d52bc68df893a8207a8276de3abb629/Slides/012-place_based_policy/lecture_12.pdf)
   
 
 - __Week 7:__ _Place Based Policies_
