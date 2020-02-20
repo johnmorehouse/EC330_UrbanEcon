@@ -73,7 +73,7 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
 
   - Lecture 9: [Local Labor Markets Part I](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/561555bef47f1814b13fe25d719c6bca1999067f/Slides/009-labor_one/lecture_nine.html)
   
-    - [.pdf version] (https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/561555bef47f1814b13fe25d719c6bca1999067f/Slides/009-labor_one/lecture_nine.pdf)
+    - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/561555bef47f1814b13fe25d719c6bca1999067f/Slides/009-labor_one/lecture_nine.pdf)
   
   - Lecture 10: ~~Local Labor Markets Part II~~ Finished lecture 9 and Midterm Review
   
