@@ -1,0 +1,894 @@
+---
+title: "Econ 330: Urban Economics"
+subtitle: "Lecture 12"
+author: "John Morehouse"
+date: "February 13th, 2020"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    # self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, center, middle
+
+```{R, setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(
+  broom, here, tidyverse,
+  latex2exp, ggplot2, ggthemes, viridis, extrafont, gridExtra,
+  kableExtra,
+  dplyr, magrittr, knitr, parallel, tufte,emo
+)
+# Define pink color
+red_pink <- "#e64173"
+turquoise <- "#20B2AA"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+# Dark slate grey: #314f4f
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)
+opts_chunk$set(dev = "svg")
+options(device = function(file, width, height) {
+  svg(tempfile(), width = width, height = height)
+})
+# A blank theme for ggplot
+theme_empty <- theme_bw() + theme(
+  line = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  axis.text = element_blank(),
+  plot.title = element_blank(),
+  axis.title = element_blank(),
+  plot.margin = structure(c(0, 0, -0.5, -1), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_simple <- theme_bw() + theme(
+  line = element_blank(),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  axis.text.x = element_text(size = 18, family = "STIXGeneral"),
+  axis.text.y = element_blank(),
+  axis.ticks = element_blank(),
+  plot.title = element_blank(),
+  axis.title = element_blank(),
+  # plot.margin = structure(c(0, 0, -1, -1), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes_math <- theme_void() + theme(
+  text = element_text(family = "MathJax_Math"),
+  axis.title = element_text(size = 22),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = "grey70",
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes_serif <- theme_void() + theme(
+  text = element_text(family = "MathJax_Main"),
+  axis.title = element_text(size = 22),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = "grey70",
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes <- theme_void() + theme(
+  text = element_text(family = "Fira Sans Book"),
+  axis.title = element_text(size = 18),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = grey_light,
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+```
+
+
+
+# Lecture XII: Place Based Policies
+
+---
+
+
+# Schedule
+
+## Today
+
+1. .hi.purple[Intro to Place-Based Policies]
+
+2. .hi.purple[Utility Revisited]
+
+## Upcoming
+
+  - .hi.slate[Read Chapter 8 of ToTC]
+  
+  -  .hi.slate[HW3 not due until Feb 25th]
+
+---
+
+
+
+
+
+
+# Place-Based Policies
+
+__Defn__: .hi[Place - Based Policies] Are policies that are location-specific .hi[specific areas]
+
+- Can you think of some examples? .hi.purple[Discuss]
+
+--
+
+  - State and Local Taxes
+  
+  - State/City minimum wage
+  
+  - Zoning laws & Land Use Restrictions
+  
+  - Enterprise Zones
+
+--
+
+---
+
+
+# Place Based Policies
+
+To be clear: .hi[federal policies] that are .pink[uniform across all states] _are not_ place-based policies
+
+  - State policies are _place-based_
+
+--
+
+This can be confusing. 
+
+--
+
+  - In some sense, even federal income tax seems like a "place-based" policy, where the place is the whole US
+  
+  - Much hard(er) to .hi[migrate] across .pink[international borders], state borders are easy
+
+--
+
+  - Some people might have slightly different definitions of this. It can be a bit loose. 
+
+--
+
+--
+
+--
+
+
+---
+
+
+
+# Enterpise Zones
+
+__Defn__ .hi[Enterprise Zone]: 
+
+> A geographic area that has been granted .pink[tax breaks, regulatory exemptions, or other public assistance] in order to encourage private economic development and job creation
+
+Examples:
+
+  - Jersey City, NJ since 1983
+  
+  - China: Shanghai and Shenzen (Special Economic Zones (SEZ))
+  
+---
+
+
+# Brownfield Remediation
+
+- A _brownfield_ is previously developed land not currently in use due to industrial or commercial pollution
+
+
+
+```{R, us_brownfields, out.width = "80%", out.height = "80%", echo = F}
+include_graphics("images/us_brownfields.png")
+```
+
+
+---
+
+
+# Brownfield Remediation
+
+- Property values around brownfields?
+  
+--
+
+  - Lower
+
+--
+
+  - Cleaning these up raises .pink[amenity value] of the neighborhood
+
+--
+
+  - What happens to property values?
+  
+    - They go up! (this is gentrification)
+--
+
+---
+
+# Air Quality Monitoring
+
+_December 2, 1970_: Environmental Protection Agency  (EPA) is Established  
+
+  - With it: The Clean Air Act
+  
+--
+
+.hi[Following years]: amendments to the CAA (expanding scale and scope of EPA)
+
+--
+
+.col-left[
+
+- 1990: Huge power granted to state and local authorities to enforce air quality standards
+
+- 1997: PM 2.5 (particulate matter of 2.5 micrograms or less) standards placed
+
+]
+
+--
+
+.col-right[
+
+- 2005: PM2.5 standards enforced
+
+-  2011: standards for greenhouse gases 
+
+]
+
+--
+
+---
+
+# Air Quality Monitoring
+
+Particulate Matter (.hi.orange[PM]) in the US is regulated under the CAA at the .hi.green[county level]<sup>.pink[†]</sup>
+
+.footnote[
+.pink[†] For more details, look [here](https://www.epa.gov/pm-pollution)
+]
+
+--
+
+  - If a county exceeds certain threshold for .hi.orange[PM] , __all__ firms over a certain size need to pay a pretty big fine
+
+  - Exceptions for fires, other natural events
+  
+- Not all counties are monitored
+
+
+--
+
+---
+
+
+
+# Air Quality Monitoring
+
+
+```{R, air_quality, out.width = "80%", out.height = "80%", echo = F}
+include_graphics("images/aq_2.png")
+```
+
+---
+
+# Minimum Wage
+
+Federal Minimum Wage: $7.25$ (not a place based policy)
+
+
+
+```{R, minwage, out.width = "80%", out.height = "80%", echo = F}
+include_graphics("images/min_wage.png")
+```
+
+
+
+---
+
+
+
+
+
+
+# Discussion
+
+- Place-based policies can be tough to assess. Depends on the policy
+
+  - Can target places, but people are mobile, and respond to changes in incentives
+
+.hi.purple[Question]: Why do federal policies impact cities differently?
+
+--
+
+  - Min wage: might be binding in some states, others not
+  
+  - Federal Income Tax: Cost of Living varies by state.
+  
+--
+
+
+---
+
+
+class: inverse, middle
+# Checklist
+
+.col-left[
+1) .hi[Intro to Place-Based Policies] `r emo::ji("check")`
+
+
+]
+
+.col-right[
+
+2) .hi.purple[Location Choice Theory]
+
+]
+
+---
+
+# Up Next
+
+- This next part you might find a little bit difficult
+
+- My hope is to scratch the surface for how you might think of modeling the effects of a place-based policy
+
+  - Need to set up a ton of stuff first 
+
+--
+
+- Some of these examples are based on [Mark Colas'](https://sites.google.com/site/markyaucolas/home?authuser=0) notes. He will teach you more about this in his 400 urban econ class
+
+--
+
+- I found some of this stuff inspiring - I hope you do too
+
+---
+
+
+# A Framework
+
+We talked a little bit about .hi[utility] earlier in the term. What is it?
+
+- An abstract notion of people's preferences. .hi.orange[Why do we care about this?]
+
+--
+
+- Want to think about policies and impact of policies
+
+  - Need to think about what people care about to assess incidence/effectiveness of a particular policy
+
+--
+
+- Remember: .hi[higher levels of utility] are more desirable than low levels of utility
+
+
+---
+
+
+
+# A framework
+
+.hi.slate[Example]: Could have preferences over left-shoes and right-shoes.  Utility might be:
+
+\begin{align*}
+U(\text{left shoes},\text{right shoes}) = \min\left\{ \text{left shoes}, \text{right shoes}   \right\}
+\end{align*}
+
+.qa[Q1]: In words, what does this say?
+
+--
+
+- I don't care about consuming more shoes unless I get more of both left and right shoes.
+
+--
+
+--
+
+.qa[Q2] Give the above utility function, which bundle would I rather consume?
+
+\begin{align*}
+\text{bundle 1}: (10000,1) \hspace{2in}
+\text{bundle 2}: (2,2)
+\end{align*}
+
+--
+
+- $U(10000,1) = 1 < U(2,2) = 2$, so I would rather consume bundle 2
+
+---
+
+# Utility
+
+.hi[Main point]: Use it to rank outcomes. Remember: utility is .hi.purple[ordinal] _not_ .hi.purple[cardinal]
+
+--
+
+- This means: we cannot speak to ordering of outcomes, not level. 
+
+  - Many utility functions give equivalent preference rankings
+
+--
+
+.qa[Q]: What if utility over shoes was: 
+
+\begin{align*}
+U_2(\text{left shoes},\text{right shoes}) = 10*\min\left\{ \text{left shoes}, \text{right shoes}   \right\}
+\end{align*}
+
+- Does this represent the same underlying preferences as the previous example (not multiplying by 10?)
+
+--
+
+  - Yes, because $U_2(10000,1) = 10*1 = 10 < U_2(2,2)  = 10*2 = 20$ 
+  
+    - So the bundle $(2,2)$ is still preferred to $(10000,1)$
+
+--
+
+---
+
+
+# Utility over Locations
+
+Could we write a utility function over locations? Sure! What would go into this function?
+
+--
+
+  - What do people make location decisions on? 
+
+--
+
+- Let's start by assuming people only care about 3 features of locations:
+  
+  - .hi[wages], .hi.purple[rents], .hi.orange[amenites]
+
+    - These all vary across locations, right? (first part of this class)
+
+
+---
+
+# Utility over Locations
+
+- Let $w_j$, $r_j$, and $a_j$ denote wages, rents, and amenities in location $j$ 
+
+  - $j = SF$, for example 
+
+--
+
+- .hi[General form]: $U(w_j, r_j,a_j) = U_j$
+
+  - Says: utility in location $j$ is a function of wages, rents, and amenities, in location $j$
+
+--
+
+--
+
+- In practice, could write down an infinite number of functions for $U(\cdot)$. 
+
+- .hi[Usual assumptions]: people like (higher utility) higher wages, lower rents, and better amenities. .hi.orange[Reasonable?]
+
+--
+
+---
+
+
+
+# Example
+
+.hi.slate[Example]: Let's go with a .hi[linear function] (and it's the same for everyone):
+
+--
+
+\begin{align*}
+U(w_j, r_j, a_j) = w_j - .5*r_j + a_j
+\end{align*}
+
+--
+
+- Suppose our two locations are SF and OAK again. If:
+
+  -  $w_{SF} = 10, r_{SF} = 8, a_{SF} = 4$
+  
+  -  $w_{OAK} = 8, r_{OAK} = 3, a_{OAK} = 1$
+
+--
+
+.qa[Q] How do workers sort across the cities?
+
+--
+
+- $U(w_{SF}, r_{SF}, a_{SF}) = 10 - .5*8 + 4 = 10$
+
+- $U(w_{OAK}, r_{OAK}, a_{OAK}) = 8 - .5*3 + 1 = 7.5$
+
+--
+
+- $10 > 7.5$ so everyone lives in SF
+
+--
+
+--
+
+---
+
+# What went wrong?
+
+In that model, everyone lived in SF and nobody lived in Oakland. .pink[Problems]?
+
+--
+
+- Not everybody has the same preferences (utility functions)
+
+- Was that last example an example in .hi[locational equilibrium]?
+
+--
+
+--
+
+- No! In .pink[locational equilibrium], utility is .purple[equalized across locations]. Can't have:
+
+  - $U(w_{SF}, r_{SF}, a_{SF}) > U(w_{OAK}, r_{OAK}, a_{OAK})$
+
+--
+
+---
+
+
+# Equilibrium
+
+
+- Again: in equilibrium, .purple[utility is equal across locations]. 
+
+
+- .pink[All values] from last example were made up, but .pink[amenity values] were __extra made up__. Why?
+
+--
+
+- We don't observe them! We see .pink[wages] and .pink[rents] in data, but amenities are more abstact.
+
+--
+
+  - Can be composed of a ton of different things
+  
+--
+
+--
+
+
+- How can we locational eq to "fix up" our last example?
+
+
+---
+
+# Calculating Amenities
+
+- Ok, now suppose we have the same wages and rents: 
+
+  -  $w_{SF} = 10, r_{SF} = 8$
+  
+  - $w_{OAK} = 8, r_{OAK} = 3$
+  
+--
+
+- .hi[Twist] _We do not know amenities in each city_
+
+--
+
+- Furthermore, suppose we enforce that .pink[utility is equal in all locations], which is some number $k$
+
+--
+
+- How can we solve for amenities in each city?
+
+--
+
+\begin{align*}
+U(w_{j}, r_{j}, a_{j}) = w_j - .5*r_j + a_j = k \implies a_{j} = k + .5*r_j - w_j 
+\end{align*}
+
+--
+
+- So $a_{SF} = k + .5*8 - 10$ and $a_{OAK} = k + .5*3 - 8$
+
+  - and thus $a_{SF} > a_{OAK}$
+
+--
+
+---
+
+# Backing Up
+
+
+\begin{align*}
+a_{j} = k + .5*r_j - w_j 
+\end{align*}
+
+
+.qa[Q] What does this equation tell us? 
+
+--
+
+- In equilibrium, .hi[higher rents] $\implies$ .pink[higher amenity value]
+
+- In equilibrium, .hi.purple[higher wages] $\implies$ .purple[lower amenity value]
+
+--
+
+- __Note__: 
+
+  - Our calculation for $a_j$ rested heavily on our assumption for the utility function
+  
+  - .qa[Q]: Did the ordering of the $a_j$'s rest on the assumption? 
+
+---
+
+
+# Another Problem
+
+- Okay, so people move and utility is equal across all locations
+
+- Thus far, we have assumed .hi.purple[wages] and .hi[rents] do not respond to these choices
+
+--
+
+  - First 6 weeks of this class should tell you: this is a .hi.orange[bad assumption]
+
+--
+
+--
+
+- Let's let rents, but not wages, adjust to individual location decisions
+
+  - _Rents are endogenous_
+
+--
+
+
+---
+
+# Rents
+
+
+- Rents in every city given by:
+
+--
+
+\begin{align*}
+r_j(L_j) = 2*L_j
+\end{align*}
+
+--
+
+- $r_j(L_j)$: rents _are a function_ of the population (not multiplied)
+
+- $L_j$ is the pop in city $j$ -- the 2 was arbitrary
+
+---
+
+# Example
+
+- Suppose we have two cities $1$ and $2$, with 7 people total. That is: $L_1 + L_2 = 7$
+
+--
+
+- Utility: $U(w_{j}, r_{j}(L_j), a_{j}) = w_j - .5*r_j(L_j) + a_j$
+
+- Wages: $w_1 = 12$, $w_2 = 7$, __rents__ : $r_j(L_j) = 2*L_j$
+
+--
+
+- Amenities: $a_1 = a_2 = 0$ (to make it easy)
+
+
+--
+
+- .qa[Question]: How many people live in each city, and what are rents in each city? __Note__: You have .hi[two equations] 
+
+--
+
+--
+  
+  - $U(w_{1}, r_{1}(L_1), a_{1}) = U(w_{2}, r_{2}(L_1), a_{2})$ (from locational eq) 
+    
+  - $L_1 + L_2 = 7$ you know the total population
+    
+--
+... and .hi[two unknowns] (namely, $L_1$ and $L_2$)
+--
+    
+--
+
+---
+
+# Example
+
+Locational eq gives:
+
+\begin{align*}
+w_1 - .5*r_1(L_1) &= w_2 - .5*r_1(L_2)\\
+12 - .5*(2*L_1) &= 7 - .5*(2*L_2)\\
+-L_1 &= -5 - L_2\\
+L_1 &= 5 + L_2
+\end{align*}
+
+--
+
+Population must sum to 7. Thus:
+
+\begin{align*}
+L_1 + L_2 &= 7\\
+5+ L_2 + L_2 &= 7\\
+2*L_2 &= 2\\
+L_2 = 2 \implies L_1 = 5
+\end{align*}
+--
+---
+
+
+# Back to Place-Based Policies
+
+Ok, how do we tie this back into .hi[place-based] policies?
+
+.hi.slate[Example]
+
+--
+
+- Initial equilibrium: $U(w_{j}, r_{j}(L_j),a_{j}) = k$ for all cities $j$
+
+--
+
+- Let's suppose $SF$ implements a 30%, flat, income tax
+
+  - Post-tax wage in city $SF$ is now $w^{tax}_{SF} = 0.7*w_{SF}$ 
+  
+  - Assume __wages are fixed__, but __rents adjust to population__
+
+--
+
+--
+
+- Utility in city $j$ is: 
+
+\begin{align*}
+U(w^{tax}_{SF}, r_{SF}(L_{SF}),a_{SF}) < U(w_{SF}, r_{SF}(L_{SF}),a_{SF})
+\end{align*}
+
+--
+
+- If utility is .hi[increasing in wages] (more money $\implies$ more utility), then an income-tax .pink[lowers utility].
+
+---
+
+# In Equilibrium
+
+Ok so, can it be an equilibrium if: 
+
+\begin{align*}
+U(w^{tax}_{SF}, r_{SF}(L_{SF}),a_{SF}) < U(w_{SF}, r_{SF}(L_{SF}),a_{SF})
+\end{align*}
+
+--
+
+- No! because $U(w_{SF}, r_{SF}(L_{SF}),a_{SF}) = k$
+
+  - So $U(w^{tax}_{SF}, r_{SF}(L_{SF}),a_{SF}) \neq k$
+
+--
+
+- People move .pink[away from SF] (and rents fall). So utility goes up in SF 
+
+- It continues to go up until $U(w^{tax}_{SF}, r_{SF}(L_{SF}),a_{SF}) = k$
+
+
+
+---
+
+# Extensions
+
+- This flexible way of modeling gives us many options for modeling place based policies
+
+--
+
+- Other kind of subsidies/taxes: goes into $w_j$
+
+- Rent subsidies or property taxes: impacts $r_j$
+
+--
+
+- .qa[Q]: How would you model an increase in public school quality?
+
+---
+
+
+# Extensions
+
+- A lot of thought goes into figuring what the coefficients on the utility function should be. That is:
+
+  - $U(w_{j}, r_{j}(L_j), a_{j}) = w_j - .5*r_j(L_j) + a_j$
+
+- Why a .5 attached to rents? Is this important?
+
+--
+
+  - Yes it is important. A higher value attached to rents $\implies$ people are more responsive with their location choice with respect to changes in rents
+
+--
+
+
+---
+
+class: inverse, middle
+# Checklist
+
+.smallest[
+.col-left[
+1) .hi[Intro to Place-Based Policies] `r emo::ji("check")`
+
+]
+]
+.smallest[
+.col-right[
+
+2) .hi[Location-Choice Theory]`r emo::ji("check")`
+
+- Modeling utility across cities
+
+- Calculating Amenity Values
+
+- Rent adjustment model
+
+- Modeling place-based policies
+
+]
+]
+
+---
+
+
+
+
+
+
+
+exclude: true 
+```{r decktape}
+p_load(pagedown)
+pagedown::chrome_print(here::here("012-growth_controls","lecture_12.html"))
+```
+
+
+
