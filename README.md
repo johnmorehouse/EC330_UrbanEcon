@@ -84,12 +84,14 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
   
   - Lecture 12: [Introduction to Place Based Policies](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/5640bd095d52bc68df893a8207a8276de3abb629/Slides/012-place_based_policy/lecture_12.html)
   
-    - .[pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/5640bd095d52bc68df893a8207a8276de3abb629/Slides/012-place_based_policy/lecture_12.pdf)
+    - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/5640bd095d52bc68df893a8207a8276de3abb629/Slides/012-place_based_policy/lecture_12.pdf)
   
 
 - __Week 7:__ _Place Based Policies_
 
-  - Lecture 13: Minimum Wage
+  - Lecture 13: [Minimum Wage](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/6d804ad2e3bef9241c1c5212aeb87f3106958890/Slides/013-min_wage/lecture_13.html)
+  
+    - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/6d804ad2e3bef9241c1c5212aeb87f3106958890/Slides/013-min_wage/lecture_13.pdf)
   
   - Lecture 14: Housing Policy
   
