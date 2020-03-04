@@ -1,0 +1,1182 @@
+---
+title: "Econ 330: Urban Economics"
+subtitle: "Lecture 16"
+author: "John Morehouse"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    # self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, center, middle
+
+```{R, setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(
+  broom, here, tidyverse,
+  latex2exp, ggplot2, ggthemes, viridis, extrafont, gridExtra,
+  kableExtra,
+  dplyr, magrittr, knitr, parallel, tufte,emo
+)
+# Define pink color
+red_pink <- "#e64173"
+turquoise <- "#20B2AA"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+# Dark slate grey: #314f4f
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)
+opts_chunk$set(dev = "svg")
+options(device = function(file, width, height) {
+  svg(tempfile(), width = width, height = height)
+})
+# A blank theme for ggplot
+
+```
+
+
+
+# Lecture XVI: Automobiles, continued
+
+---
+
+
+
+name: schedule
+# Schedule
+
+## Today
+
+--
+
+1) .hi.purple[Collisions]
+
+2) .hi.purple[Energy-Efficient Vehicles (EEVs)]
+
+
+--
+
+--
+
+## Upcoming
+
+  - .hi.slate[Book Report Due March 8th]
+  
+--
+
+---
+
+
+# Externalities:
+
+## Last time:
+
+0. People in the US own a lot of cars
+
+---
+
+
+
+
+
+count: false
+
+# Externalities:
+
+## Last time:
+
+0. People in the US own a lot of cars
+
+1. Many externalities from driving
+
+2. Congestion and solutions
+
+---
+
+
+count: false
+
+# Externalities:
+
+## Last time:
+
+0. People in the US own a lot of cars
+
+1. Many externalities from driving
+
+2. Congestion and solutions
+
+## Today
+
+  - Collisions
+  
+
+
+---
+
+
+
+count: false
+
+# Externalities:
+
+## Last time:
+
+0. People in the US own a lot of cars
+
+1. Many externalities from driving
+
+2. Congestion and solutions
+
+## Today
+
+  - Collisions
+  
+  - Energy Efficient Vehicle Subsidies (and why we care about them in Urban Econ)
+
+
+---
+
+
+
+
+
+
+# Cost of Collisions
+
+## Direct Costs 
+
+
+---
+
+
+
+
+count: false
+# Cost of Collisions
+
+## Direct Costs 
+
+  - 3.1 million injuries
+
+  - 40,000 deaths
+
+  - $300 billion
+
+
+
+
+
+---
+
+
+
+
+
+
+count: false
+# Cost of Collisions
+
+## Direct Costs 
+
+  - 3.1 million injuries
+
+  - 40,000 deaths
+
+  - $300 billion
+
+
+
+## Indirect Costs 
+
+- .hi[External costs] (via congestion)
+
+
+
+---
+
+
+
+count: false
+# Cost of Collisions
+
+## Direct Costs 
+
+  - 3.1 million injuries
+
+  - 40,000 deaths
+
+  - $300 billion
+
+
+
+## Indirect Costs 
+
+- .hi[External costs] (via congestion)
+
+- 4.4 cents per mile
+
+- 5 billion USD lost from accident delays (estimated)
+
+
+
+---
+
+
+
+# Vehicle Safety Act of 1966
+
+VSA of 66 mandated all vehicles include:
+
+
+
+---
+
+
+
+
+count: false
+# Vehicle Safety Act of 1966
+
+VSA of 66 mandated all vehicles include:
+
+
+1. Seat belts
+
+2. Head Restraints
+
+---
+
+
+
+
+count: false
+# Vehicle Safety Act of 1966
+
+VSA of 66 mandated all vehicles include:
+
+
+
+
+1. Seat belts
+
+2. Head Restraints
+
+3. Shatter-proof windshields
+
+4. Collapsible steering column
+
+
+---
+
+
+
+
+
+
+count: false
+# Vehicle Safety Act of 1966
+
+VSA of 66 mandated all vehicles include:
+
+
+
+
+1. Seat belts
+
+2. Head Restraints
+
+3. Shatter-proof windshields
+
+4. Collapsible steering column
+
+
+
+__Question:__ What changes in behavior should we expect? .hi.puprle[Discuss]
+
+---
+
+
+
+
+
+
+
+# Vehicle Safety Act of 1966
+
+## Consequences
+
+1. Only a small reduction in death rates from automobile collissions
+
+
+---
+
+
+
+count: false
+# Vehicle Safety Act of 1966
+
+## Consequences
+
+1. Only a small reduction in death rates from automobile collissions
+
+2. Rate at which collisions occured increased
+
+
+
+
+---
+
+
+
+
+count: false
+# Vehicle Safety Act of 1966
+
+## Consequences
+
+1. Only a small reduction in death rates from automobile collissions
+
+2. Rate at which collisions occured increased
+
+3. Death rate for pedestrians and bicyclsts increased
+
+
+
+---
+
+
+
+count: false
+# Vehicle Safety Act of 1966
+
+## Consequences
+
+1. Only a small reduction in death rates from automobile collissions
+
+2. Rate at which collisions occured increased
+
+3. Death rate for pedestrians and bicyclsts increased
+
+
+__Question__: Should we be surprised? Why might this have happened? .hi.purple[Discuss]
+
+---
+
+
+# Vehicle Safety Act of 1966
+
+These consequences are indeed foreseeable. What happened?
+
+
+---
+
+
+
+
+count: false
+# Vehicle Safety Act of 1966
+
+These consequences are indeed foreseeable. What happened?
+
+ - Marginal cost of driving recklessly decreased
+  
+
+---
+
+
+
+count: false
+# Vehicle Safety Act of 1966
+
+These consequences are indeed foreseeable. What happened?
+
+- Marginal cost of driving recklessly decreased
+  
+  - Conditional on being in an accident, you were now more likely to survive
+    
+
+
+
+---
+
+
+
+count: false
+# Vehicle Safety Act of 1966
+
+These consequences are indeed foreseeable. What happened?
+
+- Marginal cost of driving recklessly decreased
+  
+  - Conditional on being in an accident, you were now more likely to survive
+    
+  - So more people drove recklessly, then everything else follows (more accidents, more peds/bicyclists killed)
+
+
+
+---
+
+
+#VSA: Graph
+
+
+```{R, vsa, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+mc_pre <- function(x) 5+2*x
+mc_post <- function(x) 5+x
+mb <- function(x) 10 - x
+
+ggplot(data.frame(x=c(0, 8)), aes(x)) +
+  stat_function(fun=mc_pre, col = "purple")+
+  stat_function(fun=mb)+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept =0)+
+  geom_hline(yintercept =0)+
+  labs(x = "Speed", y=  "Cost")
+  
+
+```
+.hi.purple[MC no VSA]
+---
+
+
+
+count: false
+#VSA: Graph
+
+
+```{R, vsa3, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+mc_pre <- function(x) 5+2*x
+mc_post <- function(x) 5+x
+mb <- function(x) 10 - x
+
+ggplot(data.frame(x=c(0, 8)), aes(x)) +
+  stat_function(fun=mc_pre, col = "purple")+
+  stat_function(fun=mc_post, col = red_pink)+
+  stat_function(fun=mb)+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept =0)+
+  geom_hline(yintercept =0)+
+  labs(x = "Speed", y=  "Cost")
+  
+
+```
+.hi.purple[MC no VSA]
+.hi[MC VSA]
+
+---
+
+
+
+
+# So what?
+
+So what can we do? 
+
+
+
+---
+
+
+count: false
+# So what?
+
+So what can we do? 
+
+## Pigou strikes again
+
+
+
+---
+
+
+count: false
+# So what?
+
+So what can we do? 
+
+## Pigou strikes again
+
+  - Vehicle miles traveled (VMT) tax: tax per mile driven
+  
+
+
+---
+
+
+
+count: false
+# So what?
+
+So what can we do? 
+
+## Pigou strikes again
+
+  - Vehicle miles traveled (VMT) tax: tax per mile driven
+  
+  - Include external collision cost per mile
+  
+  - Shuts down gap between social cost and private cost of driving
+
+
+---
+
+
+
+
+
+# Pigou strikes again: Graph
+
+
+```{R, pigou, echo=F,fig.height = 5, fig.width = 8, dev = "svg", cache=T}
+
+
+s_1 = function(x) 4
+s_2 = function(x) 4.5
+demand = function(x) 6 - x
+
+
+ggplot(data.frame(x=c(0, 3)), aes(x)) +
+  stat_function(fun=s_1, col = "purple")+
+  stat_function(fun=s_2, col = red_pink)+
+  stat_function(fun=demand)+
+  ggthemes::theme_pander()+
+  geom_vline(xintercept =0)+
+  geom_hline(yintercept =0)+
+  labs(x = "Miles", y = "Accident Cost (dollars)")+
+  geom_segment(aes(x = 1.5, xend = 1.5, y= 0, yend = 4.5), linetype = "dashed")+
+  geom_segment(aes(x = 2, xend = 2, y= 0, yend = 4), linetype = "dashed")+
+  annotate(x = .5, y = 4.1, label = "Marginal Private Cost","text")+
+  annotate(x = .5, y = 4.6, label = "Marginal Social Cost", "text")
+
+  
+
+```
+
+- Marginal external cost is gap between MSC and MPC. 
+- Pigouvian tax: set tax equal to size of gap. e,g: MPC + tax = MSC
+
+---
+
+
+
+class: inverse, middle
+# Checklist
+
+.col-left[
+1) .hi[Collisions] `r emo::ji("check")`
+
+
+
+2) .hi.purple[EEVs] 
+
+]
+
+
+
+---
+
+
+# Carbon Emissions
+
+Last externality we will discuss:
+
+
+--
+
+## Carbon Emissions from Driving
+
+--
+
+  - Solutions: 
+  
+    1. Energy Efficient Vehicle (EEVs) Subsidies
+    
+    2. Gasoline (or carbon) tax
+    
+    3. VMT tax
+
+
+---
+
+
+#EEVs
+
+
+```{R, musk, out.width = "90%", out.height = "90%", echo = F}
+include_graphics("figures/musk.jpg")
+```
+
+
+---
+
+
+
+
+#EEVs
+
+
+```{R, uber, out.width = "90%", out.height = "90%", echo = F}
+include_graphics("figures/uber.jpg")
+```
+
+
+---
+
+
+
+# EEVs
+
+So whats all the hype?
+
+
+
+---
+
+
+
+count: false
+# EEVs
+
+So whats all the hype?
+
+- Energy efficient vehicles consume less gasoline per mile traveled 
+
+ 
+
+---
+
+
+
+count: false
+# EEVs
+
+So whats all the hype?
+
+- Energy efficient vehicles consume less gasoline per mile traveled 
+
+  - Private fixed cost is usually higher, but variable cost is lower
+    
+
+
+---
+
+
+
+count: false
+# EEVs
+
+So whats all the hype?
+
+- Energy efficient vehicles consume less gasoline per mile traveled 
+
+  - Private fixed cost is usually higher, but variable cost is lower
+    
+    - e.g. Sticker price for EEV is more, but cheaper to drive
+    
+
+
+
+---
+
+
+
+count: false
+# EEVs
+
+So whats all the hype?
+
+
+- Energy efficient vehicles consume less gasoline per mile traveled 
+
+  - Private fixed cost is usually higher, but variable cost is lower
+    
+    - e.g. Sticker price for EEV is more, but cheaper to drive
+    
+  - Social cost is lower (less carbon emissions per mile driven)
+
+
+
+---
+
+# EEVs
+
+.hi.purple[Question]: If an individual switches from an SUV to a prius, will their carbon emissions from driving fall? .hi.purple[Discuss]
+
+
+--
+
+_Key Assumption_: We can be certain carbon emissions falls if the individual drives the same amount with both cars
+
+  - Is this a reasonable thing to assume?
+
+--
+
+- Probably not, as the cost per mile driven is less than the SUV
+
+---
+
+# EEVs
+
+__Key Insight__:
+
+--
+
+<center>
+<font size="15"> People drive more when it becomes cheaper to do so </font>
+</center>
+
+--
+
+.hi.purple[Questions]: 
+
+  1. What happens to congestion if we subsidize electric/hybrid vehicles? 
+  2. What happens to carbon emissions?
+
+---
+
+
+# EEVs: Congestion Graph
+
+
+
+---
+
+# EEVs: Subsidy Graph
+
+
+
+---
+
+
+
+# EEVs: Carbon Emissions
+
+Predicting carbon emissions is tougher
+
+
+
+---
+
+
+
+
+
+
+count: false
+# EEVs: Carbon Emissions
+
+Predicting carbon emissions is tougher
+
+1. If we subsidize .hi[hybrid vehicles]
+
+  - Lower $CO_2$/mile but more miles...so unclear
+  
+
+
+
+---
+
+
+
+
+count: false
+# EEVs: Carbon Emissions
+
+Predicting carbon emissions is tougher
+
+1. If we subsidize .hi[hybrid vehicles]
+
+  - Lower $CO_2$/mile but more miles...so unclear
+  
+2. If we subsidize .hi[electric vehicles]
+
+  - Depends where electricity comes from
+  
+    - Some electricity is very $CO_2$ intensive, others not
+
+
+
+---
+
+
+
+
+
+count: false
+# EEVs: Carbon Emissions
+
+Predicting carbon emissions is tougher
+
+1. If we subsidize .hi[hybrid vehicles]
+
+  - Lower $CO_2$/mile but more miles...so unclear
+  
+2. If we subsidize .hi[electric vehicles]
+
+  - Depends where electricity comes from
+  
+    - Some electricity is very $CO_2$ intensive, others not
+
+
+In either case: what key __elasticity__ might you be interested in knowing to answer this question?
+
+
+
+---
+
+
+
+
+
+
+
+# EEVs: Carbon Emissions
+
+You want the 1. responsiveness of miles driven to the price of hybrid vehicles and 2. Average carbon emissions of all vehicles driven in response to a change in the price of EEVs
+
+.hi.slate[Example]: 
+
+
+---
+
+
+
+
+count: false
+# EEVs: Carbon Emissions
+
+You want the 1. responsiveness of miles driven to the price of hybrid vehicles and 2. Average carbon emissions of all vehicles driven in response to a change in the price of EEVs
+
+.hi.slate[Example]: 
+
+- Suppose $\varepsilon_{\text{miles,price EEV}} = -3$
+
+  - As the price of a hybrid falls by 1%, the miles driven increases by 3%
+
+---
+
+
+
+
+
+
+count: false
+# EEVs: Carbon Emissions
+
+You want the 1. responsiveness of miles driven to the price of hybrid vehicles and 2. Average carbon emissions of all vehicles driven in response to a change in the price of EEVs
+
+.hi.slate[Example]: 
+
+- Suppose $\varepsilon_{\text{miles,price EEV}} = -3$
+
+  - As the price of a hybrid falls by 1%, the miles driven increases by 3%
+  
+- Also assume $\varepsilon_{\text{CEPM ,price EEV}} = .05$ where CEPM is __C__arbon __E__missions __P__er __M__ile
+
+
+---
+
+
+
+
+
+
+count: false
+# EEVs: Carbon Emissions
+
+You want the 1. responsiveness of miles driven to the price of hybrid vehicles and 2. Average carbon emissions of all vehicles driven in response to a change in the price of EEVs
+
+.hi.slate[Example]: 
+
+- Suppose $\varepsilon_{\text{miles,price EEV}} = -3$
+
+  - As the price of a hybrid falls by 1%, the miles driven increases by 3%
+  
+- Also assume $\varepsilon_{\text{CEPM ,price EEV}} = .05$ where CEPM is __C__arbon __E__missions __P__er __M__ile
+
+  - This says that as hybrids get cheaper, the average carbon emissions per mile falls as well
+
+---
+
+
+
+
+# Example, continued
+
+Ok, so we had $\varepsilon_{\text{miles,price EEV}} = -3$, and $\varepsilon_{\text{CEPM ,price EEV}} = .05$
+
+
+---
+
+
+
+
+
+
+
+
+
+
+count: false
+# Example, continued
+
+Ok, so we had $\varepsilon_{\text{miles,price EEV}} = -3$, and $\varepsilon_{\text{CEPM ,price EEV}} = .05$
+
+.qa[Question]: Prior to an EEV subsidy, the total miles driven in a city was 1000 and the carbon emissions per mile is 2 lbs.
+
+---
+
+
+
+
+count: false
+# Example, continued
+
+Ok, so we had $\varepsilon_{\text{miles,price EEV}} = -3$, and $\varepsilon_{\text{CEPM ,price EEV}} = .05$
+
+.qa[Question]: Prior to an EEV subsidy, the total miles driven in a city was 1000 and the carbon emissions per mile is 2 lbs.
+
+  - What happens to overall emissions when the government subsidizes EEV's leading to a 10\% decrease in the equilibrium price?
+  
+
+---
+
+
+
+
+
+
+
+count: false
+# Example, continued
+
+Ok, so we had $\varepsilon_{\text{miles,price EEV}} = -3$, and $\varepsilon_{\text{CEPM ,price EEV}} = .05$
+
+.qa[Question]: Prior to an EEV subsidy, the total miles driven in a city was 1000 and the carbon emissions per mile is 2 lbs.
+
+  - What happens to overall emissions when the government subsidizes EEV's leading to a 10\% decrease in the equilibrium price?
+  
+__Total Emissions Prior__: $1000*2 = 2000 \text{lbs}$
+
+
+---
+
+
+
+
+
+count: false
+# Example, continued
+
+Ok, so we had $\varepsilon_{\text{miles,price EEV}} = -3$, and $\varepsilon_{\text{CEPM ,price EEV}} = .05$
+
+.qa[Question]: Prior to an EEV subsidy, the total miles driven in a city was 1000 and the carbon emissions per mile is 2 lbs.
+
+  - What happens to overall emissions when the government subsidizes EEV's leading to a 10\% decrease in the equilibrium price?
+  
+__Total Emissions Prior__: $1000*2 = 2000 \text{lbs}$
+
+- Miles after: $1000*1.3 =  1,300$
+
+---
+
+
+
+
+count: false
+# Example, continued
+
+Ok, so we had $\varepsilon_{\text{miles,price EEV}} = -3$, and $\varepsilon_{\text{CEPM ,price EEV}} = .05$
+
+.qa[Question]: Prior to an EEV subsidy, the total miles driven in a city was 1000 and the carbon emissions per mile is 2 lbs.
+
+  - What happens to overall emissions when the government subsidizes EEV's leading to a 10\% decrease in the equilibrium price?
+  
+__Total Emissions Prior__: $1000*2 = 2000 \text{lbs}$
+
+- Miles after: $1000*1.3 =  1,300$
+
+- Emissions per mile after: $2*.97 = 1.94$
+
+
+---
+
+
+
+
+
+
+count: false
+# Example, continued
+
+Ok, so we had $\varepsilon_{\text{miles,price EEV}} = -3$, and $\varepsilon_{\text{CEPM ,price EEV}} = .05$
+
+.qa[Question]: Prior to an EEV subsidy, the total miles driven in a city was 1000 and the carbon emissions per mile is 2 lbs.
+
+  - What happens to overall emissions when the government subsidizes EEV's leading to a 10\% decrease in the equilibrium price?
+  
+__Total Emissions Prior__: $1000*2 = 2000 \text{lbs}$
+
+- Miles after: $1000*1.3 =  1,300$
+
+- Emissions per mile after: $2*.97 = 1.94$
+
+__Total Emissions Post__: $1,300 * 1.94 = 2,522 \text{lbs}$
+
+So total emissions went _up_ `r emo::ji("exploding_head")`
+
+---
+
+
+# Evidence
+
+
+Newer evidence of distributional concerns over EEV subsidies<sup>.hi[†]</sup>
+
+.footnote[
+.hi[†] This comes from a study done by [Holland et. al](https://www.nber.org/papers/w21291)
+
+]
+
+---
+
+
+
+count: false
+# Evidence
+
+
+Newer evidence of distributional concerns over EEV subsidies<sup>.hi[†]</sup>
+
+.footnote[
+.hi[†] This comes from a study done by [Holland et. al](https://www.nber.org/papers/w21291)
+
+]
+
+__Basic idea__: energy demand increases, but gasoline demand falls
+
+
+
+---
+
+
+count: false
+# Evidence
+
+
+Newer evidence of distributional concerns over EEV subsidies<sup>.hi[†]</sup>
+
+.footnote[
+.hi[†] This comes from a study done by [Holland et. al](https://www.nber.org/papers/w21291)
+]
+
+__Basic idea__: energy demand increases, but gasoline demand falls
+
+- Poorer indviduals live near power plants (negative amenity)
+
+
+---
+
+
+
+
+count: false
+# Evidence
+
+Newer evidence of distributional concerns over EEV subsidies<sup>.hi[†]</sup>
+
+.footnote[
+.hi[†] This comes from a study done by [Holland et. al](https://www.nber.org/papers/w21291)
+]
+
+__Basic idea__: energy demand increases, but gasoline demand falls
+
+- Poorer indviduals live near power plants (negative amenity)
+
+- Higher electricity demand deteriorates air quality around power plants
+
+  - will vary by type of plant. If you have clean energy, this isn't a concern
+
+
+---
+
+
+count: false
+# Evidence
+
+
+Newer evidence of distributional concerns over EEV subsidies<sup>.hi[†]</sup>
+
+.footnote[
+.hi[†] This comes from a study done by [Holland et. al](https://www.nber.org/papers/w21291)
+
+]
+
+__Basic idea__: energy demand increases, but gasoline demand falls
+
+- Poorer indviduals live near power plants (negative amenity)
+
+- Higher electricity demand deteriorates air quality around power plants
+
+  - will vary by type of plant. If you have clean energy, this isn't a concern
+
+
+
+
+---
+
+
+
+
+class: inverse, middle
+# Checklist
+
+.col-left[
+1) .hi[Collisions] `r emo::ji("check")`
+
+
+2) .hi[EEVs] `r emo::ji("check")`
+
+]
+
+
+
+---
+
+```{r decktape}
+p_load(pagedown)
+pagedown::chrome_print(here::here("016-highwaysp2","lecture_16.html"))
+```
+
+
+
+<!-- --- -->
+<!-- exclude: true -->
+
+<!-- ```{R, generate pdfs, include = F} -->
+<!-- system("decktape remark 02_goodsmarket_part1.html 02_goodsmarket_part1.pdf --chrome-arg=--allow-file-access-from-files") -->
+<!-- ``` -->
+
+
+
+
+
+
+
+
