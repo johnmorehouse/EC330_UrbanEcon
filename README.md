@@ -93,13 +93,19 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
   
     - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/6d804ad2e3bef9241c1c5212aeb87f3106958890/Slides/013-min_wage/lecture_13.pdf)
   
-  - Lecture 14: Housing Policy
+  - Lecture 14: [Housing Policy](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/6c4957a3760da3588ffadf5d5e2c41a2272705d5/Slides/014-rent_control/lecture_14.html)
+  
+    - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/6c4957a3760da3588ffadf5d5e2c41a2272705d5/Slides/014-rent_control/lecture_14.pdf)
   
 - __Week 8:__ _Automobiles_
 
-  - Lecture 15: Automobiles Part I
+  - Lecture 15: [Automobiles Part I](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/6c4957a3760da3588ffadf5d5e2c41a2272705d5/Slides/015-autos_1/lecture_15.html)
   
-  - Lecture 16: Automobiles Part II
+    - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/6c4957a3760da3588ffadf5d5e2c41a2272705d5/Slides/015-autos_1/lecture_15.pdf)
+  
+  - Lecture 16: [Automobiles Part II](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/6c4957a3760da3588ffadf5d5e2c41a2272705d5/Slides/016-autos_2/lecture_16.html)
+  
+  - [.pdf version](https://github.com/johnmorehouse/EC330_UrbanEcon/blob/master/Slides/016-autos_2/lecture_16.pdf)
   
 - __Week 9:__ _Transit & The Environment_
  
