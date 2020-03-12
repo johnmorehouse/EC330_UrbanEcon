@@ -111,7 +111,9 @@ After each lecture, I will post the slides below. I will post both a `.html` ver
  
   - Lecture 17: Urban Transportation
   
-  - Lecture 18: The Environmental Consequences of Sorting
+  - Lecture 18: [The Environmental Consequences of Sorting](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/a34bc386464717636bdfccdf6999ca5d51f4787e/Slides/018-env_sorting/lecture_18.html)
+  
+    - [.pdf version](https://rawcdn.githack.com/johnmorehouse/EC330_UrbanEcon/a34bc386464717636bdfccdf6999ca5d51f4787e/Slides/018-env_sorting/lecture_18.pdf)
   
 - __Week 10:__ _Topics & Review_
 
