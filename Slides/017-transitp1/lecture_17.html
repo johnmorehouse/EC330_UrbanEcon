@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Econ 330: Urban Economics</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="John Morehouse" />
+    <link href="lecture_17_files/remark-css/default.css" rel="stylesheet" />
+    <link href="lecture_17_files/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="lecture_17_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Econ 330: Urban Economics
+## Lecture 17
+### John Morehouse
+### 03 March, 2020
+
+---
+
+class: inverse, center, middle
+
+
+
+
+
+# Lecture 17: Urban Transportation
+
+---
+
+
+name: schedule
+# Schedule
+
+## Today
+
+--
+
+1) .hi.purple[Urban Transit Overview]
+
+2) .hi.purple[Transit Choice Math]
+
+3) .hi.purple[Trains and Buses]
+
+4) .hi.purple[A word on Ridesharing]
+
+--
+
+--
+
+## Upcoming
+
+  - .hi.slate[Book Report Due March 8th]
+  
+--
+
+---
+
+
+
+# Overview
+
+One way to combat almost all externalities from driving: .hi[urban transit]
+
+
+---
+
+
+
+
+
+
+count: false
+# Overview
+
+One way to combat almost all externalities from driving: .hi[urban transit]
+
+
+
+1. Reduces emissions
+
+2. Reduces congestion
+
+
+---
+
+
+
+
+count: false
+# Overview
+
+One way to combat almost all externalities from driving: .hi[urban transit]
+
+
+
+1. Reduces emissions
+
+2. Reduces congestion
+
+3. Reduces collisions
+
+4. Concentrates noise pollution
+
+
+---
+
+
+
+
+
+count: false
+# Overview
+
+One way to combat almost all externalities from driving: .hi[urban transit]
+
+
+
+1. Reduces emissions
+
+2. Reduces congestion
+
+3. Reduces collisions
+
+4. Concentrates noise pollution
+
+
+
+Great! Must be some bad things, right?
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Overview
+
+.qa[Question]: What do you dislike about public transit?
+
+
+
+---
+
+
+
+
+count: false
+# Overview
+
+.qa[Question]: What do you dislike about public transit? __Typical Answers__:
+
+  - Takes too much time
+
+  - Too expensive
+
+
+---
+
+
+
+
+count: false
+# Overview
+
+.qa[Question]: What do you dislike about public transit? __Typical Answers__:
+
+  - Takes too much time
+  
+  - Too expensive
+  
+  - Stange sights and smells
+  
+  - Can't find a seat at busy times
+
+
+
+---
+
+
+
+
+
+count: false
+# Overview
+
+.qa[Question]: What do you dislike about public transit? __Typical Answers__:
+
+  - Takes too much time
+  
+  - Too expensive
+  
+  - Stange sights and smells
+  
+  - Can't find a seat at busy times
+
+
+Perfectly reasonable responses. All of these things suck
+
+---
+
+
+
+
+
+
+
+# Overview
+
+So, public transit fixes a ton of external problems we are worried about, but raises a new set of questions:
+
+
+---
+
+
+
+
+count: false
+# Overview
+
+So, public transit fixes a ton of external problems we are worried about, but raises a new set of questions:
+
+
+
+1. How do we get people to use it?
+
+2. When are Buses better than rail?
+
+
+---
+
+
+
+
+
+count: false
+# Overview
+
+So, public transit fixes a ton of external problems we are worried about, but raises a new set of questions:
+
+
+
+1. How do we get people to use it?
+
+2. When are Buses better than rail?
+
+3. What population density is required to support public transit?
+
+4. Can public transit ever be profitable?
+
+---
+
+
+
+# Examples
+
+Everyone has probably experienced cities with public transit they like and dislike
+
+
+---
+
+# Transit to and from work in the US
+
+
+&lt;img src="images/transit_table.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+# US Public Ridership over time
+
+
+&lt;img src="images/transit.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+class: inverse, middle
+# Checklist
+
+.col-left[
+1) .hi[Urban Transit Overview] ✅
+
+
+2) .hi.purple[Transit Choice Math]
+
+]
+
+.col-right[
+3) .hi.purple[Trains and Buses]
+
+4) .hi.purple[A word on Ridesharing]
+
+
+]
+
+
+
+---
+
+
+
+
+
+# Modeling Trip Cost
+
+We can model trip costs as:
+
+`\begin{align*}
+Cost = m + T_a\cdot d_a + T_v \cdot d_v
+\end{align*}`
+
+where 
+
+- m: monetary cost
+
+--
+
+- `\(T_a\)`: access time (getting to or waiting for transit)
+
+- `\(d_a\)`: marginal disutility of access time
+
+--
+
+--
+
+- `\(T_v\)`: Travel time 
+
+- `\(d_v\)`: Marginal disutility of travel time
+
+--
+
+---
+
+# Modeling Trip Cost
+
+In general, `\(d_a &gt; d_v\)`. What does this mean? .hi.purple[Discuss]
+
+--
+
+- Marginal disutility of waiting for a bus (or train) exceeds riding in one.
+
+--
+
+Can you use this model to explain why most people commute via car? (in the US)
+
+
+--
+
+- For cars, `\(T_a\cdot d_a\)` is very small
+
+- Aditionally, for many: `\(d_v^{car}&gt; d_v^{transit}\)`, even when `\(T_v^{car} = T_v^{transit}\)`
+
+--
+
+Is `\(T_v^{car} = T_v^{transit}\)`? 
+
+---
+
+
+count: false
+# Modeling Trip Cost
+
+In general, `\(d_a &gt; d_v\)`. What does this mean? .hi.purple[Discuss]
+
+
+
+- Marginal disutility of waiting for a bus (or train) exceeds riding in one
+
+
+
+Can you use this model to explain why most people commute via car? (in the US)
+
+
+
+
+- For cars, `\(T_a\cdot d_a\)` is very small
+
+- Aditionally, for many: `\(d_v^{car}&gt; d_v^{transit}\)`, even when `\(T_v^{car} = T_v^{transit}\)`
+
+
+
+Is `\(T_v^{car} = T_v^{transit}\)` (usually)? .hi[No!]
+
+---
+
+# An Example
+
+Using the table, figure out which mode of transit the individual will take
+
+&lt;style type="text/css"&gt;
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-73a0{font-size:12px;border-color:inherit;text-align:left;vertical-align:top}
+&lt;/style&gt;
+&lt;table class="tg"&gt;
+  &lt;tr&gt;
+    &lt;th class="tg-0lax"&gt;&lt;/th&gt;
+    &lt;th class="tg-0lax"&gt;Walking&lt;/th&gt;
+    &lt;th class="tg-0lax"&gt;Biking&lt;/th&gt;
+    &lt;th class="tg-0lax"&gt;Car&lt;/th&gt;
+    &lt;th class="tg-0lax"&gt;Bus&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0lax"&gt;Monetary Cost&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;0.1&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;0.2&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;0.5&lt;/td&gt;
+    &lt;td class="tg-73a0"&gt;2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0lax"&gt;Access Time&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;0&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;1&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;2&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0lax"&gt;Marginal disutility per min&lt;br&gt;for access (in dollars)&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;1&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;1&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;1&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0lax"&gt;In-vehicle time&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;12&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;6&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;3&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;4&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0lax"&gt;Marginal disutility per in &lt;br&gt;vehicle min (in dollars)&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;0.5&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;1&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;0.5&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;0.25&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0lax"&gt;Trip Cost&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+---
+
+count: false
+# An Example
+
+Using the table, figure out which mode of transit the individual will take
+
+&lt;style type="text/css"&gt;
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-73a0{font-size:12px;border-color:inherit;text-align:left;vertical-align:top}
+&lt;/style&gt;
+&lt;table class="tg"&gt;
+  &lt;tr&gt;
+    &lt;th class="tg-0lax"&gt;&lt;/th&gt;
+    &lt;th class="tg-0lax"&gt;Walking&lt;/th&gt;
+    &lt;th class="tg-0lax"&gt;Biking&lt;/th&gt;
+    &lt;th class="tg-0lax"&gt;Car&lt;/th&gt;
+    &lt;th class="tg-0lax"&gt;Bus&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0lax"&gt;Monetary Cost&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;0.1&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;0.2&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;0.5&lt;/td&gt;
+    &lt;td class="tg-73a0"&gt;2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0lax"&gt;Access Time&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;0&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;1&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;2&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0lax"&gt;Marginal disutility per min&lt;br&gt;for access (in dollars)&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;1&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;1&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;1&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0lax"&gt;In-vehicle time&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;12&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;6&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;3&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;4&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0lax"&gt;Marginal disutility per in &lt;br&gt;vehicle min (in dollars)&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;0.5&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;1&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;0.5&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;0.25&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0lax"&gt;Trip Cost&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;6.1&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;7.2&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;4&lt;/td&gt;
+    &lt;td class="tg-0lax"&gt;8&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+- They drive!
+
+---
+
+
+
+#Data
+
+&lt;img src="images/walking_med.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+
+
+# Data
+
+&lt;img src="images/walking_med_Act.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
+
+
+
+
+---
+
+
+# Data
+
+&lt;img src="images/walking_large.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+# Back to the Model
+
+Using our simple model, what ways can we incentivize people to drive less?
+
+
+---
+
+
+
+count: false
+# Back to the Model
+
+Using our simple model, what ways can we incentivize people to drive less?
+
+- Price mechanisms (change `\(m\)`)
+
+- More access points (change `\(T_a\)`)
+
+
+
+---
+
+
+
+
+
+
+
+count: false
+# Back to the Model
+
+Using our simple model, what ways can we incentivize people to drive less?
+
+
+
+- Price mechanisms (change `\(m\)`)
+
+- More access points (change `\(T_a\)`)
+
+- More efficient public transit (change `\(T_v\)`)
+
+- More clean public transit (change `\(d_v\)`)
+
+
+
+
+---
+
+
+
+
+
+count: false
+# Back to the Model
+
+Using our simple model, what ways can we incentivize people to drive less?
+
+- Price mechanisms (change `\(m\)`)
+
+- More access points (change `\(T_a\)`)
+
+- More efficient public transit (change `\(T_v\)`)
+
+- More clean public transit (change `\(d_v\)`)
+
+
+Probably hard to do much to `\(d_a\)` (why?)
+
+
+---
+
+
+
+class: inverse, middle
+# Checklist
+
+.col-left[
+1) .hi[Urban Transit Overview] ✅
+
+
+2) .hi[Transit Choice Math] ✅
+
+]
+
+.col-right[
+
+3) .hi.purple[Trains and Buses]
+
+4) .hi.purple[A word on Ridesharing]
+
+
+]
+
+
+
+---
+
+
+# Trains and Buses
+
+Now let's discuss some costs and benefits to:
+
+1. Buses
+
+2. Trains
+
+--
+
+Can you think of any?
+
+--
+
+
+---
+
+
+
+# Buses 
+
+## Advantages 
+
+- Integrated: commuters can make the entire trip on one vehicle without switching
+- Time between Buses can be shorter
+
+---
+
+
+
+count: false
+# Buses 
+
+## Advantages 
+
+- Integrated: commuters can make the entire trip on one vehicle without switching
+- Time between Buses can be shorter
+- Space between stops can be shorter
+- _Relatively_ cheap to build and operate
+
+
+
+
+---
+
+
+
+count: false
+
+# Buses 
+
+## Advantages 
+
+- Integrated: commuters can make the entire trip on one vehicle without switching
+- Time between Buses can be shorter
+- Space between stops can be shorter
+- _Relatively_ cheap to build and operate
+
+
+
+## Disadvantages
+
+
+---
+
+
+
+
+
+count: false
+
+# Buses 
+
+## Advantages 
+
+- Integrated: commuters can make the entire trip on one vehicle without switching
+- Time between Buses can be shorter
+- Space between stops can be shorter
+- _Relatively_ cheap to build and operate
+
+
+
+## Disadvantages
+
+  - Subject to same problems of congestion with automobiles 
+  - Bunching (get off schedule with long stretches with no Buses, then many at once)
+
+
+---
+
+
+
+# Trains
+
+## Advantages
+
+- Seperate right of way: not sensitive to automobile congestion
+- Can keep schedules relatively assiduously
+
+---
+
+
+
+
+count: false
+# Trains
+
+## Advantages
+
+- Seperate right of way: not sensitive to automobile congestion
+- Can keep schedules relatively assiduously
+- Easier to board for young, elderly, and disabled
+
+
+
+---
+
+
+
+
+count: false
+# Trains
+
+## Advantages
+
+- Seperate right of way: not sensitive to automobile congestion
+- Can keep schedules relatively assiduously
+- Easier to board for young, elderly, and disabled
+
+
+## Disadvantages
+
+
+---
+
+
+
+
+
+
+count: false
+# Trains
+
+## Advantages
+
+- Seperate right of way: not sensitive to automobile congestion
+- Can keep schedules relatively assiduously
+- Easier to board for young, elderly, and disabled
+
+
+## Disadvantages
+
+- Not integrated: many riders must switch modes
+- Widely spaced stations `\(\implies\)` longer access time
+
+---
+
+
+count: false
+# Trains
+
+## Advantages
+
+- Seperate right of way: not sensitive to automobile congestion
+- Can keep schedules relatively assiduously
+- Easier to board for young, elderly, and disabled
+
+
+## Disadvantages
+
+- Not integrated: many riders must switch modes
+- Widely spaced stations `\(\implies\)` longer access time
+- Sometimes (BART): very costly to ride!
+- Super expensive to build (hundreds of millions per mile) and operate
+
+---
+
+
+
+
+# Cost Curves
+
+Public transportation is subject to .hi[economies of scale]. Why?
+
+--
+
+- Indivisible inputs: cannot efficiently scale down building of trains
+
+  - Is it more or less costly to operate 1 inch or 1 mile of train?
+  
+- __Mohring Economies__: More riders `\(\implies\)` more buses/trains added to same route `\(\implies\)` shorter wait times per rider
+  
+--
+
+What does this imply for the shape of the average and marginal cost curves?
+
+--
+
+- They are decreasing
+
+--
+
+
+---
+
+
+
+
+
+
+class: inverse, middle
+# Checklist
+
+.col-left[
+1) .hi[Urban Transit Overview] ✅
+
+
+2) .hi[Transit Choice Math] ✅
+
+]
+
+.col-right[
+3) .hi[Trains and Buses]✅
+
+4) .hi.purple[A word on Ridesharing]
+
+]
+
+
+
+---
+
+# Ridesharing
+
+- In the last 5-10 years: ridesharing (uber, lyft, etc) has exploded. Is this good?
+
+ 
+
+---
+
+
+
+
+count: false
+# Ridesharing
+
+- In the last 5-10 years: ridesharing (uber, lyft, etc) has exploded. Is this good?
+
+  - Depends who you ask.
+  
+ 
+---
+
+
+
+
+count: false
+# Ridesharing
+
+- In the last 5-10 years: ridesharing (uber, lyft, etc) has exploded. Is this good?
+
+  - Depends who you ask.
+  
+  - Two questions: 
+
+  1. Does everyone benefit equally from uber? Do some people suffer?
+      
+  2. What are _potential_ drawbacks to ridesharing?
+
+
+
+---
+
+
+
+count: false
+# Ridesharing: Benefits
+
+.hi[Benefits]:
+
+- Cheaper than alternative (cabs) by a huge margin
+
+---
+
+
+
+count: false
+# Ridesharing: Benefits
+
+.hi[Benefits]:
+
+- Cheaper than alternative (cabs) by a huge margin
+
+  - Estimated average consumer surplus of $1.60 per ride
+
+
+
+---
+
+
+
+count: false
+# Ridesharing: Benefits
+
+.hi[Benefits]:
+
+- Cheaper than alternative (cabs) by a huge margin
+
+  - Estimated average consumer surplus of $1.60 per ride
+
+- ''Easy'' employment for individuals having trouble finding work
+
+
+---
+
+
+
+
+
+count: false
+# Ridesharing: Benefits
+
+.hi[Benefits]:
+
+- Cheaper than alternative (cabs) by a huge margin
+
+  - Estimated average consumer surplus of $1.60 per ride
+
+- ''Easy'' employment for individuals having trouble finding work
+
+- Possible: reduce car ownership and carbon emissions
+
+
+
+---
+
+
+# Ridesharing: Costs
+
+
+
+
+.hi[Costs]:
+
+  - Over half of uber trips would have been made by bike or foot (estimated)
+
+
+
+---
+
+
+
+
+count: false
+# Ridesharing: Costs
+
+.hi[Costs]:
+
+  - Over half of uber trips would have been made by bike or foot (estimated)
+  
+  - Associated with increase in VMT (damn, nope on carbon emissions), petrol consumption, _and_ car ownership
+  
+
+
+---
+
+
+
+
+
+count: false
+# Ridesharing: Costs
+
+
+.hi[Costs]:
+
+  - Over half of uber trips would have been made by bike or foot (estimated)
+  
+  - Associated with increase in VMT (damn, nope on carbon emissions), petrol consumption, _and_ car ownership
+  
+  - Roughly 1000 additional fatal accidents per year
+    
+
+
+
+---
+
+
+
+
+count: false
+# Ridesharing: Costs
+
+
+
+
+.hi[Costs]:
+
+  - Over half of uber trips would have been made by bike or foot (estimated)
+  
+  - Associated with increase in VMT (damn, nope on carbon emissions), petrol consumption, _and_ car ownership
+  
+  - Roughly 1000 additional fatal accidents per year
+    
+
+
+
+Is it a good thing? Maybe, this is normative.
+
+
+
+
+---
+
+
+
+class: inverse, middle
+# Checklist
+
+.col-left[
+1) .hi[Urban Transit Overview] ✅
+
+
+2) .hi[Transit Choice Math] ✅
+
+]
+
+.col-right[
+3) .hi[Trains and Buses]✅
+
+4) .hi[A word on Ridesharing] ✅
+
+]
+
+
+---
+
+
+
+```r
+p_load(pagedown)
+pagedown::chrome_print(here::here("017-transitp1","lecture_17.html"))
+```
+
+
+&lt;!-- --- --&gt;
+&lt;!-- exclude: true --&gt;
+
+&lt;!-- ```{R, generate pdfs, include = F} --&gt;
+&lt;!-- system("decktape remark 02_goodsmarket_part1.html 02_goodsmarket_part1.pdf --chrome-arg=--allow-file-access-from-files") --&gt;
+&lt;!-- ``` --&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
